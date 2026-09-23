@@ -632,21 +632,6 @@ footer a:hover {
     margin-bottom: 6px;
 }
 
-.portada-juego {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background: rgba(5, 5, 10, 0.92);
-    text-align: center;
-    color: #e0e0ff;
-    z-index: 5;
-}
 
 .portada-juego i {
     font-size: 48px;
@@ -676,4 +661,56 @@ footer a:hover {
     width: 100%;
     max-width: 640px;
     margin: 0 auto;
+}
+
+.portada-juego {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background:
+        radial-gradient(circle at 25% 20%, rgba(57, 255, 20, 0.25), transparent 55%),
+        radial-gradient(circle at 75% 80%, rgba(255, 46, 196, 0.25), transparent 55%),
+        #05050a;
+    text-align: center;
+    color: #e0e0ff;
+    z-index: 5;
+    overflow: hidden;
+}
+
+.portada-fondo {
+    position: absolute;
+    font-size: 220px !important;
+    color: rgba(255, 255, 255, 0.05) !important;
+    margin: 0 !important;
+    transform: rotate(-15deg);
+    z-index: 0;
+}
+
+.portada-juego > i:not(.portada-fondo) {
+    font-size: 48px;
+    color: #39ff14;
+    margin-bottom: 10px;
+    z-index: 1;
+    text-shadow: 0 0 20px #39ff14;
+}
+
+.portada-juego p {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 20px;
+    color: #ff2ec4;
+    margin-bottom: 6px;
+    z-index: 1;
+    text-shadow: 0 0 10px #ff2ec4;
+}
+
+.portada-juego span {
+    font-size: 13px;
+    color: #a0a0c0;
+    z-index: 1;
 }

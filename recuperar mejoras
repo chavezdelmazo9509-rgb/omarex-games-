@@ -1,0 +1,1856 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OMAREX Games — Catálogo de juegos gratis</title>
+    <meta name="description" content="Catálogo de juegos gratis para PC, consola y navegador, con reseñas y juegos jugables directo en la página.">
+    <link rel="stylesheet" href="estilos.css">
+    <link rel="icon" type="image/jpeg" href="omarex.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Rajdhani&display=swap" rel="stylesheet">
+    <meta property="og:title" content="OMAREX Games — Catálogo de juegos gratis">
+    <meta property="og:description" content="Catálogo de juegos gratis para PC, consola y navegador, con reseñas, tráilers y minijuegos jugables directo en la página.">
+    <meta property="og:image" content="https://chavezdelmazo9509-rgb.github.io/omarex-games-/omarex.jpg">
+    <meta property="og:url" content="https://chavezdelmazo9509-rgb.github.io/omarex-games-/">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <h1><img src="omarex.jpg" alt="OMAREX Games" class="logo"></h1>
+        <p class="tagline">Catálogo de juegos gratis — reseñas y juegos jugables directo aquí</p>
+        <a href="https://ko-fi.com/omarex690" target="_blank" rel="noopener" class="boton-apoyo">☕ Apóyame en Ko-fi</a>
+        <button id="menu-toggle" aria-label="Abrir menú">☰</button>
+        <nav>
+            <ul>
+                <li><a href="#pc">PC</a></li>
+                <li><a href="#consola">Consola</a></li>
+                <li><a href="#navegador">Navegador</a></li>
+                <li><a href="#jugar">Jugar ahora</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+
+        <section id="pc">
+            <h2>🖥️ PC</h2>
+            <p class="seccion-intro">Juegos gratis para computadora, con reseña corta y link de descarga oficial.</p>
+            <div class="catalogo-grid">
+                <div class="juego-catalogo">
+                    <span class="trailer-etiqueta">▶ Se reproduce aquí mismo</span>
+                    <div class="trailer-card"><iframe src="https://www.youtube.com/embed/zqLy6pPmupo" title="Counter-Strike 2 trailer" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+                    <h3>Counter-Strike 2</h3>
+                    <p>Shooter táctico 5v5, el estándar del FPS competitivo desde hace más de dos décadas. Sin pay-to-win.</p>
+                    <a href="https://store.steampowered.com/app/730/CounterStrike_2/" target="_blank" rel="noopener">Ver en Steam</a>
+                </div>
+                <div class="juego-catalogo">
+                    <span class="trailer-etiqueta">▶ Se reproduce aquí mismo</span>
+                    <div class="trailer-card"><iframe src="https://www.youtube.com/embed/9AsEwQJiQQE" title="Fortnite trailer" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+                    <h3>Fortnite</h3>
+                    <p>Battle royale + modo creativo + LEGO Fortnite. Constantemente actualizado con nuevos eventos.</p>
+                    <a href="https://www.fortnite.com/" target="_blank" rel="noopener">Descargar (Epic Games)</a>
+                </div>
+                <div class="juego-catalogo">
+                    <span class="trailer-etiqueta">▶ Se reproduce aquí mismo</span>
+                    <div class="trailer-card"><iframe src="https://www.youtube.com/embed/ZAkkNmPs2rg" title="Warframe trailer" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+                    <h3>Warframe</h3>
+                    <p>Acción cooperativa tipo looter-shooter con más de una década de contenido gratuito de calidad AAA.</p>
+                    <a href="https://store.steampowered.com/app/230410/Warframe/" target="_blank" rel="noopener">Ver en Steam</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="consola">
+            <h2>🎮 Consola</h2>
+            <p class="seccion-intro">Juegos gratis (free-to-play) para PlayStation, Xbox y Switch.</p>
+            <div class="catalogo-grid">
+                <div class="juego-catalogo">
+                    <span class="trailer-etiqueta">▶ Se reproduce aquí mismo</span>
+                    <div class="trailer-card"><iframe src="https://www.youtube.com/embed/9AsEwQJiQQE" title="Fortnite trailer" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+                    <h3>Fortnite</h3>
+                    <p>Disponible en PS5, Xbox Series y Switch, sin necesidad de suscripción online para jugarlo.</p>
+                    <a href="https://www.fortnite.com/" target="_blank" rel="noopener">Ver plataformas</a>
+                </div>
+                <div class="juego-catalogo">
+                    <span class="trailer-etiqueta">▶ Se reproduce aquí mismo</span>
+                    <div class="trailer-card"><iframe src="https://www.youtube.com/embed/6iJZYWtnIFU" title="Apex Legends trailer" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+                    <h3>Apex Legends</h3>
+                    <p>Battle royale de héroes con habilidades únicas por personaje, ritmo rápido y gunplay muy pulido.</p>
+                    <a href="https://www.ea.com/games/apex-legends" target="_blank" rel="noopener">Sitio oficial</a>
+                </div>
+                <div class="juego-catalogo">
+                    <span class="trailer-etiqueta">▶ Se reproduce aquí mismo</span>
+                    <div class="trailer-card"><iframe src="https://www.youtube.com/embed/TiPNqKDtDXQ" title="Rocket League trailer" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+                    <h3>Rocket League</h3>
+                    <p>Fútbol con autos cohete. Fácil de aprender, muy difícil de dominar. Ideal para jugar con amigos.</p>
+                    <a href="https://www.rocketleague.com/" target="_blank" rel="noopener">Sitio oficial</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="navegador">
+            <h2>🌐 Navegador</h2>
+            <p class="seccion-intro">Juegos que puedes jugar sin descargar nada, directo desde el navegador.</p>
+            <div class="catalogo-grid">
+                <div class="juego-catalogo">
+                    <span class="trailer-etiqueta">▶ Se reproduce aquí mismo</span>
+                    <div class="trailer-card"><iframe src="https://www.youtube.com/embed/WcJDJSJx4Wo" title="Slither.io trailer" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+                    <h3>Slither.io</h3>
+                    <p>El clásico juego de la serpiente, versión multijugador online. Directo en el navegador, sin registro.</p>
+                    <a href="https://slither.io/" target="_blank" rel="noopener">Jugar ahora</a>
+                </div>
+                <div class="juego-catalogo">
+                    <span class="trailer-etiqueta">▶ Se reproduce aquí mismo</span>
+                    <div class="trailer-card"><iframe src="https://www.youtube.com/embed/wFFtZfvsfVY" title="Subway Surfers trailer" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+                    <h3>Subway Surfers</h3>
+                    <p>Corredor infinito esquivando trenes. Uno de los juegos más jugados de navegador en el mundo.</p>
+                    <a href="https://poki.com/es/g/subway-surfers" target="_blank" rel="noopener">Jugar en Poki</a>
+                </div>
+                <div class="juego-catalogo">
+                    <span class="trailer-etiqueta">▶ Se reproduce aquí mismo</span>
+                    <div class="trailer-card"><iframe src="https://www.youtube.com/embed/eKW4WwHEqpE" title="Moto X3M trailer" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+                    <h3>Moto X3M</h3>
+                    <p>Carreras de motocross con física de daño, niveles cortos y muy adictivos.</p>
+                    <a href="https://poki.com/es/g/moto-x3m" target="_blank" rel="noopener">Jugar en Poki</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="jugar">
+            <h2>🕹️ Jugar ahora</h2>
+            <p class="seccion-intro">Juego de memoria: encuentra las 8 parejas con el menor número de movimientos.</p>
+            <p class="reglas-juego">📋 Reglas: voltea 2 cartas por turno. Si combinan, quedan destapadas. Tienes un límite de <strong id="limite-texto">15</strong> movimientos para encontrar las 8 parejas.</p>
+            <div id="juego-embebido">
+                <div class="memoria-info">
+                    <span>Movimientos: <span id="contador-movimientos">0</span></span>
+                    <button id="iniciar-memoria">▶ Iniciar</button>
+                    <button id="reiniciar-juego">🔄 Reiniciar</button>
+                </div>
+                <p id="memoria-mensaje">Presiona ▶ Iniciar para comenzar</p>
+                <div id="tablero-memoria"><div class="portada-juego"><i class="fa-solid fa-brain portada-fondo"></i><i class="fa-solid fa-brain"></i><p>Juego de Memoria</p><span>Presiona ▶ Iniciar para comenzar</span></div></div>
+                <div id="memoria-guardar-nombre" style="display: none;">
+                    <input type="text" id="memoria-nombre-input" maxlength="12" placeholder="Tu nombre">
+                    <button id="memoria-guardar-btn">Guardar</button>
+                </div>
+                <div class="snake-tabla">
+                    <h4>🏆 Mejores 10 (menos movimientos)</h4>
+                    <ol id="memoria-top10"></ol>
+                </div>
+            </div>
+
+            <div class="snake-juego">
+                <h3>🐍 OMAREX Snake</h3>
+                <p class="reglas-juego">📋 Usa las flechas del teclado (o los botones abajo en celular) para moverte. Come los puntos verdes para crecer y sumar puntos. Los diamantes 💎 dorados dan +50 puntos y 5 segundos de modo turbo. Si llegas a un borde, apareces del otro lado — ¡no choques contigo mismo ni con los ladrillos 🧱!</p>
+                <div class="snake-info">
+                    <span>Puntos: <span id="snake-puntos">0</span></span>
+                    <span>Nivel: <span id="snake-nivel">1</span></span>
+                    <span>Récord: <span id="snake-record">0</span></span>
+                </div>
+                <div class="snake-skins">
+                    <button class="skin-btn activo" data-skin="neon">🟢 Neón</button>
+                    <button class="skin-btn" data-skin="fuego">🔥 Fuego</button>
+                    <button class="skin-btn" data-skin="cyber">🔮 Cyber</button>
+                    <button class="skin-btn" data-skin="dorado">👑 Dorado</button>
+                </div>
+                <div class="snake-canvas-wrap"><canvas id="snake-canvas" width="640" height="400"></canvas><div id="snake-portada" class="portada-juego"><i class="fa-solid fa-worm portada-fondo"></i><i class="fa-solid fa-worm"></i><p>OMAREX Snake</p><span>Presiona ▶ Jugar para comenzar</span></div></div>
+                <div id="snake-mensaje"></div>
+                <div id="snake-guardar-nombre" style="display: none;">
+                    <input type="text" id="snake-nombre-input" maxlength="12" placeholder="Tu nombre">
+                    <button id="snake-guardar-btn">Guardar</button>
+                </div>
+                <div class="snake-tabla">
+                    <h4>🏆 Mejores 10 puntajes</h4>
+                    <ol id="snake-top5"></ol>
+                </div>
+                <button id="snake-iniciar">▶ Jugar</button>
+                <div class="snake-controles">
+                    <button class="snake-btn" id="btn-arriba">⬆</button>
+                    <div>
+                        <button class="snake-btn" id="btn-izquierda">⬅</button>
+                        <button class="snake-btn" id="btn-abajo">⬇</button>
+                        <button class="snake-btn" id="btn-derecha">➡</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 OMAREX Games</p>
+        <p><a href="https://omarex95.netlify.app/" target="_blank" rel="noopener">👤 Hecho por Omar — ver su portafolio</a></p>
+    </footer>
+
+<script>
+    const menuToggle = document.getElementById("menu-toggle");
+    const navUl = document.querySelector("nav ul");
+
+    menuToggle.addEventListener("click", function() {
+        navUl.classList.toggle("abierto");
+    });
+
+    document.querySelectorAll("nav a").forEach(function(link) {
+        link.addEventListener("click", function() {
+            navUl.classList.remove("abierto");
+        });
+    });
+
+    // ===== Sistema de sonido (sin archivos externos) =====
+    const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+
+    function reproducirTono(frecuencia, duracion, tipo, volumen) {
+        const oscilador = audioCtx.createOscillator();
+        const ganancia = audioCtx.createGain();
+        oscilador.type = tipo || "sine";
+        oscilador.frequency.value = frecuencia;
+        oscilador.connect(ganancia);
+        ganancia.connect(audioCtx.destination);
+        ganancia.gain.setValueAtTime(volumen !== undefined ? volumen : 0.15, audioCtx.currentTime);
+        ganancia.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + duracion);
+        oscilador.start();
+        oscilador.stop(audioCtx.currentTime + duracion);
+    }
+
+    function sonidoBarrido(frecInicial, frecFinal, duracion, tipo) {
+        const osc = audioCtx.createOscillator();
+        const ganancia = audioCtx.createGain();
+        osc.type = tipo || "sine";
+        osc.frequency.setValueAtTime(frecInicial, audioCtx.currentTime);
+        osc.frequency.exponentialRampToValueAtTime(frecFinal, audioCtx.currentTime + duracion);
+        osc.connect(ganancia);
+        ganancia.connect(audioCtx.destination);
+        ganancia.gain.setValueAtTime(0.15, audioCtx.currentTime);
+        ganancia.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + duracion);
+        osc.start();
+        osc.stop(audioCtx.currentTime + duracion);
+    }
+
+    function sonidoRuido(duracion, volumen) {
+        const tamano = audioCtx.sampleRate * duracion;
+        const buffer = audioCtx.createBuffer(1, tamano, audioCtx.sampleRate);
+        const datos = buffer.getChannelData(0);
+        for (let i = 0; i < tamano; i++) {
+            datos[i] = (Math.random() * 2 - 1) * (1 - i / tamano);
+        }
+        const fuente = audioCtx.createBufferSource();
+        fuente.buffer = buffer;
+        const filtro = audioCtx.createBiquadFilter();
+        filtro.type = "lowpass";
+        filtro.frequency.value = 700;
+        const ganancia = audioCtx.createGain();
+        ganancia.gain.value = volumen || 0.25;
+        fuente.connect(filtro);
+        filtro.connect(ganancia);
+        ganancia.connect(audioCtx.destination);
+        fuente.start();
+    }
+
+    function sonidoVoltear() {
+        reproducirTono(280 + Math.random() * 40, 0.07, "square");
+    }
+
+    function sonidoPareja() {
+        [523, 659, 784].forEach(function(f) {
+            reproducirTono(f, 0.25, "sine");
+        });
+    }
+
+    function sonidoError() {
+        sonidoBarrido(400, 120, 0.3, "sawtooth");
+    }
+
+    function sonidoPaso() {
+        const tono = turboActivo ? 260 : 200;
+        reproducirTono(tono, 0.05, "sine", 0.035);
+    }
+
+    function sonidoComer() {
+        sonidoBarrido(300, 750, 0.08, "square");
+    }
+
+    function sonidoDiamante() {
+        [523, 659, 784, 1047].forEach(function(f, i) {
+            setTimeout(function() { reproducirTono(f, 0.12, "sine"); }, i * 60);
+        });
+    }
+
+    function sonidoVictoria() {
+        const notas = [523, 659, 784, 1047];
+        notas.forEach(function(f, i) {
+            setTimeout(function() { reproducirTono(f, 0.2, "sine"); }, i * 130);
+        });
+        setTimeout(function() {
+            notas.forEach(function(f) { reproducirTono(f, 0.5, "sine"); });
+        }, 560);
+    }
+
+    function sonidoDerrota() {
+        sonidoBarrido(400, 80, 0.6, "sawtooth");
+        setTimeout(function() { sonidoRuido(0.3); }, 100);
+    }
+
+    const iconosMemoria = ["🎮", "🕹️", "👾", "🏆", "⚡", "👑", "🔥", "💎"];
+    const LIMITE_MOVIMIENTOS = 15;
+    let cartasVolteadas = [];
+    let paresEncontrados = 0;
+    let movimientos = 0;
+    let bloqueado = false;
+
+    let tablaMemoria = JSON.parse(localStorage.getItem("memoriaTop10")) || [];
+    let movimientosPendientes = null;
+
+    const cajaNombreMemoria = document.getElementById("memoria-guardar-nombre");
+    const inputNombreMemoria = document.getElementById("memoria-nombre-input");
+    const btnGuardarMemoria = document.getElementById("memoria-guardar-btn");
+
+    function actualizarTablaMemoria() {
+        const lista = document.getElementById("memoria-top10");
+        lista.innerHTML = "";
+
+        if (tablaMemoria.length === 0) {
+            lista.innerHTML = "<li>Todavía no hay puntajes</li>";
+        } else {
+            tablaMemoria.forEach(function(entrada) {
+                const li = document.createElement("li");
+                li.textContent = entrada.nombre + " — " + entrada.movimientos + " mov.";
+                lista.appendChild(li);
+            });
+        }
+    }
+
+    function guardarPuntajeMemoria(nombre, movimientosFinales) {
+        const nombreLimpio = nombre.trim() === "" ? "Jugador" : nombre.trim();
+        tablaMemoria.push({ nombre: nombreLimpio, movimientos: movimientosFinales });
+        tablaMemoria.sort(function(a, b) { return a.movimientos - b.movimientos; });
+        tablaMemoria = tablaMemoria.slice(0, 10);
+        localStorage.setItem("memoriaTop10", JSON.stringify(tablaMemoria));
+        actualizarTablaMemoria();
+    }
+
+    btnGuardarMemoria.addEventListener("click", function() {
+        if (movimientosPendientes === null) return;
+        guardarPuntajeMemoria(inputNombreMemoria.value, movimientosPendientes);
+        movimientosPendientes = null;
+        cajaNombreMemoria.style.display = "none";
+        inputNombreMemoria.value = "";
+    });
+
+    actualizarTablaMemoria();
+
+    function iniciarJuego() {
+        const tablero = document.getElementById("tablero-memoria");
+        const mensaje = document.getElementById("memoria-mensaje");
+        cajaNombreMemoria.style.display = "none";
+        movimientosPendientes = null;
+        tablero.innerHTML = "";
+        cartasVolteadas = [];
+        paresEncontrados = 0;
+        movimientos = 0;
+        bloqueado = true;
+        document.getElementById("contador-movimientos").textContent = "0";
+
+        const cartas = [...iconosMemoria, ...iconosMemoria];
+        cartas.sort(function() { return Math.random() - 0.5; });
+
+        const elementosCarta = [];
+
+        cartas.forEach(function(icono) {
+            const carta = document.createElement("div");
+            carta.classList.add("carta-memoria", "volteada");
+            carta.dataset.icono = icono;
+            carta.textContent = icono;
+            carta.addEventListener("click", function() {
+                voltearCarta(carta);
+            });
+            tablero.appendChild(carta);
+            elementosCarta.push(carta);
+        });
+
+        let segundosRestantes = 3;
+        mensaje.textContent = "👀 Memoriza las cartas... " + segundosRestantes;
+
+        const cuentaRegresiva = setInterval(function() {
+            segundosRestantes--;
+            if (segundosRestantes > 0) {
+                mensaje.textContent = "👀 Memoriza las cartas... " + segundosRestantes;
+            } else {
+                clearInterval(cuentaRegresiva);
+                mensaje.textContent = "";
+                elementosCarta.forEach(function(carta) {
+                    carta.classList.remove("volteada");
+                    carta.textContent = "❓";
+                });
+                bloqueado = false;
+            }
+        }, 1000);
+    }
+
+    function voltearCarta(carta) {
+        if (bloqueado) return;
+        if (carta.classList.contains("volteada") || carta.classList.contains("encontrada")) return;
+        if (cartasVolteadas.length === 2) return;
+        if (movimientos >= LIMITE_MOVIMIENTOS) return;
+
+        carta.classList.add("volteada");
+        carta.textContent = carta.dataset.icono;
+        cartasVolteadas.push(carta);
+
+        if (cartasVolteadas.length === 2) {
+            movimientos++;
+            document.getElementById("contador-movimientos").textContent = movimientos;
+            verificarPareja();
+        }
+    }
+
+    function verificarPareja() {
+        const carta1 = cartasVolteadas[0];
+        const carta2 = cartasVolteadas[1];
+
+        if (carta1.dataset.icono === carta2.dataset.icono) {
+            carta1.classList.add("encontrada");
+            carta2.classList.add("encontrada");
+            cartasVolteadas = [];
+            paresEncontrados++;
+
+            if (paresEncontrados === iconosMemoria.length) {
+                setTimeout(function() {
+                    document.getElementById("memoria-mensaje").textContent = "🎉 ¡Ganaste en " + movimientos + " movimientos!";
+                    movimientosPendientes = movimientos;
+                    cajaNombreMemoria.style.display = "flex";
+                    inputNombreMemoria.focus();
+                }, 300);
+            }
+        } else {
+            bloqueado = true;
+            setTimeout(function() {
+                carta1.classList.remove("volteada");
+                carta2.classList.remove("volteada");
+                carta1.textContent = "❓";
+                carta2.textContent = "❓";
+                cartasVolteadas = [];
+                bloqueado = false;
+
+                if (movimientos >= LIMITE_MOVIMIENTOS && paresEncontrados < iconosMemoria.length) {
+                    setTimeout(function() {
+                        document.getElementById("memoria-mensaje").textContent = "💀 Se acabaron los movimientos. Encontraste " + paresEncontrados + " de 8 parejas.";
+                    }, 200);
+                }
+            }, 800);
+        }
+    }
+
+    document.getElementById("reiniciar-juego").addEventListener("click", iniciarJuego);
+    document.getElementById("iniciar-memoria").addEventListener("click", iniciarJuego);
+
+
+    // ===== JUEGO DE SNAKE =====
+    const canvas = document.getElementById("snake-canvas");
+    const ctx = canvas.getContext("2d");
+    const tam = 20;
+    const columnas = canvas.width / tam;
+    const filas = canvas.height / tam;
+
+    let serpiente, direccion, siguienteDireccion, comida, diamante, diamanteTimeout, obstaculos, particulas;
+    let puntos, nivel, velocidadBase, jugando, turboActivo, turboTimeout;
+    let intervaloJuego;
+
+    const elPuntos = document.getElementById("snake-puntos");
+    const elNivel = document.getElementById("snake-nivel");
+    const elRecord = document.getElementById("snake-record");
+    const elMensaje = document.getElementById("snake-mensaje");
+    const btnIniciar = document.getElementById("snake-iniciar");
+
+    const API_PUNTAJES = "https://omarex-puntajes-server.onrender.com/puntajes";
+    let tablaPuntajes = [];
+    let puntajePendiente = null;
+
+    function actualizarTabla() {
+        const lista = document.getElementById("snake-top5");
+        lista.innerHTML = "";
+
+        if (tablaPuntajes.length === 0) {
+            lista.innerHTML = "<li>Todavía no hay puntajes</li>";
+        } else {
+            tablaPuntajes.forEach(function(entrada) {
+                const li = document.createElement("li");
+                li.textContent = entrada.nombre + " — " + entrada.puntos + " pts";
+                lista.appendChild(li);
+            });
+        }
+
+        elRecord.textContent = tablaPuntajes.length > 0 ? tablaPuntajes[0].puntos : 0;
+    }
+
+    function guardarPuntaje(nombre, puntosFinales) {
+        const nombreLimpio = nombre.trim() === "" ? "Jugador" : nombre.trim();
+        fetch(API_PUNTAJES, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ nombre: nombreLimpio, puntos: puntosFinales })
+        })
+        .then(function(respuesta) { return respuesta.json(); })
+        .then(function(listaActualizada) {
+            tablaPuntajes = listaActualizada;
+            actualizarTabla();
+        })
+        .catch(function(error) {
+            console.log("Error al guardar puntaje:", error);
+        });
+    }
+
+    function cargarPuntajes() {
+        fetch(API_PUNTAJES)
+        .then(function(respuesta) { return respuesta.json(); })
+        .then(function(lista) {
+            tablaPuntajes = lista;
+            actualizarTabla();
+        })
+        .catch(function(error) {
+            console.log("Error al cargar puntajes:", error);
+        });
+    }
+
+    const cajaNombre = document.getElementById("snake-guardar-nombre");
+    const inputNombre = document.getElementById("snake-nombre-input");
+    const btnGuardarNombre = document.getElementById("snake-guardar-btn");
+
+    btnGuardarNombre.addEventListener("click", function() {
+        if (puntajePendiente === null) return;
+        guardarPuntaje(inputNombre.value, puntajePendiente);
+        puntajePendiente = null;
+        cajaNombre.style.display = "none";
+        inputNombre.value = "";
+    });
+
+    cargarPuntajes();
+
+    function posicionAleatoria() {
+        return {
+            x: Math.floor(Math.random() * columnas),
+            y: Math.floor(Math.random() * filas)
+        };
+    }
+
+    function celdaOcupada(pos) {
+        for (let i = 0; i < serpiente.length; i++) {
+            if (serpiente[i].x === pos.x && serpiente[i].y === pos.y) return true;
+        }
+        for (let i = 0; i < obstaculos.length; i++) {
+            if (obstaculos[i].x === pos.x && obstaculos[i].y === pos.y) return true;
+        }
+        if (comida && comida.x === pos.x && comida.y === pos.y) return true;
+        if (diamante && diamante.x === pos.x && diamante.y === pos.y) return true;
+        return false;
+    }
+
+    function posicionLibre() {
+        let pos;
+        let intentos = 0;
+        do {
+            pos = posicionAleatoria();
+            intentos++;
+        } while (celdaOcupada(pos) && intentos < 200);
+        return pos;
+    }
+
+    function generarObstaculos() {
+        obstaculos = [];
+        const cantidad = 16;
+        for (let i = 0; i < cantidad; i++) {
+            let pos;
+            let intentos = 0;
+            do {
+                pos = posicionAleatoria();
+                intentos++;
+            } while (
+                intentos < 200 &&
+                (celdaOcupada(pos) || (Math.abs(pos.x - Math.floor(columnas / 2)) < 6 && Math.abs(pos.y - Math.floor(filas / 2)) < 4))
+            );
+            obstaculos.push(pos);
+        }
+    }
+
+    function reiniciarIntervalo() {
+        clearInterval(intervaloJuego);
+        const velocidadActual = turboActivo ? Math.max(velocidadBase / 2, 40) : velocidadBase;
+        intervaloJuego = setInterval(loopJuego, velocidadActual);
+    }
+
+    function iniciarSnake() {
+        const centroX = Math.floor(columnas / 2);
+        const centroY = Math.floor(filas / 2);
+        serpiente = [{x: centroX, y: centroY}, {x: centroX - 1, y: centroY}, {x: centroX - 2, y: centroY}];
+        direccion = {x: 1, y: 0};
+        siguienteDireccion = {x: 1, y: 0};
+        diamante = null;
+        obstaculos = [];
+        particulas = [];
+        generarObstaculos();
+        comida = posicionLibre();
+        clearTimeout(diamanteTimeout);
+        puntos = 0;
+        nivel = 1;
+        velocidadBase = 150;
+        turboActivo = false;
+        clearTimeout(turboTimeout);
+        jugando = true;
+        document.getElementById("snake-portada").style.display = "none";
+
+        elPuntos.textContent = puntos;
+        elNivel.textContent = nivel;
+        elMensaje.textContent = "";
+        cajaNombre.style.display = "none";
+        puntajePendiente = null;
+        btnIniciar.textContent = "⏸ Reiniciar";
+
+        dibujar();
+        reiniciarIntervalo();
+    }
+
+    function loopJuego() {
+        sonidoPaso();
+        direccion = siguienteDireccion;
+        const cabeza = {x: serpiente[0].x + direccion.x, y: serpiente[0].y + direccion.y};
+
+        if (cabeza.x < 0) cabeza.x = columnas - 1;
+        if (cabeza.x >= columnas) cabeza.x = 0;
+        if (cabeza.y < 0) cabeza.y = filas - 1;
+        if (cabeza.y >= filas) cabeza.y = 0;
+
+        for (let i = 0; i < serpiente.length; i++) {
+            if (serpiente[i].x === cabeza.x && serpiente[i].y === cabeza.y) {
+                return terminarJuego();
+            }
+        }
+
+        for (let i = 0; i < obstaculos.length; i++) {
+            if (obstaculos[i].x === cabeza.x && obstaculos[i].y === cabeza.y) {
+                return terminarJuego();
+            }
+        }
+
+        serpiente.unshift(cabeza);
+        let crecio = false;
+
+        if (cabeza.x === comida.x && cabeza.y === comida.y) {
+            puntos += 10;
+            crecio = true;
+            sonidoComer();
+            crearParticulas(comida, "#39ff14", 10);
+            comida = posicionLibre();
+
+            if (!diamante && Math.random() < 0.35) {
+                diamante = posicionLibre();
+                diamanteTimeout = setTimeout(function() {
+                    diamante = null;
+                }, 5000);
+            }
+
+            const nivelNuevo = Math.floor(puntos / 100) + 1;
+            if (nivelNuevo !== nivel) {
+                nivel = nivelNuevo;
+                velocidadBase = Math.max(150 - (nivel - 1) * 15, 60);
+                elNivel.textContent = nivel;
+                reiniciarIntervalo();
+            }
+        }
+
+        if (diamante && cabeza.x === diamante.x && cabeza.y === diamante.y) {
+            puntos += 50;
+            crecio = true;
+            sonidoDiamante();
+            crearParticulas(diamante, "#ffd700", 18);
+            diamante = null;
+            clearTimeout(diamanteTimeout);
+            activarTurbo();
+        }
+
+        if (!crecio) {
+            serpiente.pop();
+        }
+
+        elPuntos.textContent = puntos;
+        dibujar();
+    }
+
+    function activarTurbo() {
+        turboActivo = true;
+        elMensaje.textContent = "⚡ ¡MODO TURBO ACTIVADO!";
+        reiniciarIntervalo();
+
+        clearTimeout(turboTimeout);
+        turboTimeout = setTimeout(function() {
+            turboActivo = false;
+            elMensaje.textContent = "";
+            reiniciarIntervalo();
+        }, 5000);
+    }
+
+    function terminarJuego() {
+        clearInterval(intervaloJuego);
+        jugando = false;
+        sonidoDerrota();
+
+        const esRecordNuevo = tablaPuntajes.length === 0 || puntos > tablaPuntajes[0].puntos;
+
+        if (esRecordNuevo && puntos > 0) {
+            elMensaje.textContent = "🏆 ¡Nuevo récord! " + puntos + " puntos";
+        } else {
+            elMensaje.textContent = "💀 Juego terminado. Puntos: " + puntos;
+        }
+
+        if (puntos > 0) {
+            puntajePendiente = puntos;
+            cajaNombre.style.display = "block";
+            inputNombre.value = "";
+            inputNombre.focus();
+        }
+
+        btnIniciar.textContent = "▶ Jugar de nuevo";
+    }
+
+    const skins = {
+        neon:   { cabeza: "#ff2ec4", cuerpoA: "#39ff14", cuerpoB: "#1f8f0c", glow: "#39ff14" },
+        fuego:  { cabeza: "#ffcc00", cuerpoA: "#ff5500", cuerpoB: "#aa2200", glow: "#ff8800" },
+        cyber:  { cabeza: "#00eaff", cuerpoA: "#9b30ff", cuerpoB: "#4b0082", glow: "#9b30ff" },
+        dorado: { cabeza: "#fff5cc", cuerpoA: "#ffd700", cuerpoB: "#a67c00", glow: "#ffd700" }
+    };
+    let skinActual = "neon";
+
+    document.querySelectorAll(".skin-btn").forEach(function(boton) {
+        boton.addEventListener("click", function() {
+            document.querySelectorAll(".skin-btn").forEach(function(b) {
+                b.classList.remove("activo");
+            });
+            boton.classList.add("activo");
+            skinActual = boton.dataset.skin;
+        });
+    });
+
+    function crearParticulas(celda, color, cantidad) {
+        const c = centroCelda(celda);
+        for (let i = 0; i < cantidad; i++) {
+            const angulo = Math.random() * Math.PI * 2;
+            const velocidad = 1 + Math.random() * 2.5;
+            particulas.push({
+                x: c.x, y: c.y,
+                vx: Math.cos(angulo) * velocidad,
+                vy: Math.sin(angulo) * velocidad,
+                vida: 1,
+                color: color
+            });
+        }
+    }
+
+    function actualizarYDibujarParticulas() {
+        particulas.forEach(function(p) {
+            p.x += p.vx;
+            p.y += p.vy;
+            p.vida -= 0.06;
+        });
+        particulas = particulas.filter(function(p) { return p.vida > 0; });
+
+        particulas.forEach(function(p) {
+            ctx.globalAlpha = Math.max(p.vida, 0);
+            ctx.fillStyle = p.color;
+            ctx.beginPath();
+            ctx.arc(p.x, p.y, 3, 0, Math.PI * 2);
+            ctx.fill();
+        });
+        ctx.globalAlpha = 1;
+    }
+
+    function dibujarFondo() {
+        ctx.fillStyle = "#05050a";
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+        ctx.strokeStyle = "rgba(57, 255, 20, 0.07)";
+        ctx.lineWidth = 1;
+        for (let x = 0; x <= columnas; x++) {
+            ctx.beginPath();
+            ctx.moveTo(x * tam, 0);
+            ctx.lineTo(x * tam, canvas.height);
+            ctx.stroke();
+        }
+        for (let y = 0; y <= filas; y++) {
+            ctx.beginPath();
+            ctx.moveTo(0, y * tam);
+            ctx.lineTo(canvas.width, y * tam);
+            ctx.stroke();
+        }
+    }
+
+    function dibujarVineta() {
+        const grad = ctx.createRadialGradient(
+            canvas.width / 2, canvas.height / 2, canvas.width * 0.25,
+            canvas.width / 2, canvas.height / 2, canvas.width * 0.7
+        );
+        grad.addColorStop(0, "rgba(0,0,0,0)");
+        grad.addColorStop(1, "rgba(0,0,0,0.55)");
+        ctx.fillStyle = grad;
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+    }
+
+    function centroCelda(seg) {
+        return { x: seg.x * tam + tam / 2, y: seg.y * tam + tam / 2 };
+    }
+
+    function trazarCuerpo(ancho, color, glow) {
+        if (serpiente.length < 2) return;
+        ctx.lineJoin = "round";
+        ctx.lineCap = "round";
+        ctx.strokeStyle = color;
+        ctx.lineWidth = ancho;
+        ctx.shadowColor = glow;
+        ctx.shadowBlur = 10;
+
+        ctx.beginPath();
+        const inicio = centroCelda(serpiente[0]);
+        ctx.moveTo(inicio.x, inicio.y);
+        for (let i = 1; i < serpiente.length; i++) {
+            const p = centroCelda(serpiente[i]);
+            ctx.lineTo(p.x, p.y);
+        }
+        ctx.stroke();
+        ctx.shadowBlur = 0;
+    }
+
+    function dibujarCabeza(paleta) {
+        const c = centroCelda(serpiente[0]);
+        ctx.shadowColor = paleta.glow;
+        ctx.shadowBlur = 12;
+        ctx.fillStyle = paleta.cabeza;
+        ctx.beginPath();
+        ctx.arc(c.x, c.y, tam / 2, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.shadowBlur = 0;
+    }
+
+    function dibujarOjos() {
+        const cabeza = serpiente[0];
+        const cx = cabeza.x * tam + tam / 2;
+        const cy = cabeza.y * tam + tam / 2;
+        const off = tam / 4;
+        let ojo1, ojo2;
+
+        if (direccion.x === 1) {
+            ojo1 = {x: cx + off * 0.5, y: cy - off};
+            ojo2 = {x: cx + off * 0.5, y: cy + off};
+        } else if (direccion.x === -1) {
+            ojo1 = {x: cx - off * 0.5, y: cy - off};
+            ojo2 = {x: cx - off * 0.5, y: cy + off};
+        } else if (direccion.y === -1) {
+            ojo1 = {x: cx - off, y: cy - off * 0.5};
+            ojo2 = {x: cx + off, y: cy - off * 0.5};
+        } else {
+            ojo1 = {x: cx - off, y: cy + off * 0.5};
+            ojo2 = {x: cx + off, y: cy + off * 0.5};
+        }
+
+        [ojo1, ojo2].forEach(function(ojo) {
+            ctx.fillStyle = "#ffffff";
+            ctx.beginPath();
+            ctx.arc(ojo.x, ojo.y, tam / 8, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.fillStyle = "#000000";
+            ctx.beginPath();
+            ctx.arc(ojo.x, ojo.y, tam / 16, 0, Math.PI * 2);
+            ctx.fill();
+        });
+    }
+
+    function dibujar() {
+        dibujarFondo();
+
+        const paleta = skins[skinActual];
+
+        ctx.shadowColor = "#39ff14";
+        ctx.shadowBlur = 10;
+        ctx.fillStyle = "#39ff14";
+        ctx.beginPath();
+        ctx.arc(comida.x * tam + tam / 2, comida.y * tam + tam / 2, tam / 3, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.shadowBlur = 0;
+
+        if (diamante) {
+            ctx.font = tam + "px sans-serif";
+            ctx.textAlign = "center";
+            ctx.textBaseline = "middle";
+            ctx.fillText("💎", diamante.x * tam + tam / 2, diamante.y * tam + tam / 2);
+        }
+
+        ctx.font = (tam - 2) + "px sans-serif";
+        ctx.textAlign = "center";
+        ctx.textBaseline = "middle";
+        obstaculos.forEach(function(o) {
+            ctx.fillText("🧱", o.x * tam + tam / 2, o.y * tam + tam / 2);
+        });
+
+        const brilloExtra = Math.min(serpiente.length, 30) / 2;
+
+        trazarCuerpo(tam - 2, paleta.cuerpoB, paleta.glow);
+        trazarCuerpo(tam - 9, paleta.cuerpoA, paleta.glow);
+
+        dibujarCabeza(paleta);
+        dibujarOjos();
+        actualizarYDibujarParticulas();
+        dibujarVineta();
+    }
+
+    function cambiarDireccion(nuevaX, nuevaY) {
+        if (!jugando) return;
+        if (nuevaX === -direccion.x && nuevaY === -direccion.y) return;
+        siguienteDireccion = {x: nuevaX, y: nuevaY};
+    }
+
+    document.addEventListener("keydown", function(evento) {
+        if (evento.key === "ArrowUp") cambiarDireccion(0, -1);
+        if (evento.key === "ArrowDown") cambiarDireccion(0, 1);
+        if (evento.key === "ArrowLeft") cambiarDireccion(-1, 0);
+        if (evento.key === "ArrowRight") cambiarDireccion(1, 0);
+    });
+
+    document.getElementById("btn-arriba").addEventListener("click", function() { cambiarDireccion(0, -1); });
+    document.getElementById("btn-abajo").addEventListener("click", function() { cambiarDireccion(0, 1); });
+    document.getElementById("btn-izquierda").addEventListener("click", function() { cambiarDireccion(-1, 0); });
+    document.getElementById("btn-derecha").addEventListener("click", function() { cambiarDireccion(1, 0); });
+
+    btnIniciar.addEventListener("click", iniciarSnake);
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OMAREX Games — Catálogo de juegos gratis</title>
+    <meta name="description" content="Catálogo de juegos gratis para PC, consola y navegador, con reseñas y juegos jugables directo en la página.">
+    <link rel="stylesheet" href="estilos.css">
+    <link rel="icon" type="image/jpeg" href="omarex.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Rajdhani&display=swap" rel="stylesheet">
+    <meta property="og:title" content="OMAREX Games — Catálogo de juegos gratis">
+    <meta property="og:description" content="Catálogo de juegos gratis para PC, consola y navegador, con reseñas, tráilers y minijuegos jugables directo en la página.">
+    <meta property="og:image" content="https://chavezdelmazo9509-rgb.github.io/omarex-games-/omarex.jpg">
+    <meta property="og:url" content="https://chavezdelmazo9509-rgb.github.io/omarex-games-/">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <h1><img src="omarex.jpg" alt="OMAREX Games" class="logo"></h1>
+        <p class="tagline">Catálogo de juegos gratis — reseñas y juegos jugables directo aquí</p>
+        <a href="https://ko-fi.com/omarex690" target="_blank" rel="noopener" class="boton-apoyo">☕ Apóyame en Ko-fi</a>
+        <button id="menu-toggle" aria-label="Abrir menú">☰</button>
+        <nav>
+            <ul>
+                <li><a href="#pc">PC</a></li>
+                <li><a href="#consola">Consola</a></li>
+                <li><a href="#navegador">Navegador</a></li>
+                <li><a href="#jugar">Jugar ahora</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+
+        <section id="pc">
+            <h2>🖥️ PC</h2>
+            <p class="seccion-intro">Juegos gratis para computadora, con reseña corta y link de descarga oficial.</p>
+            <div class="catalogo-grid">
+                <div class="juego-catalogo">
+                    <span class="trailer-etiqueta">▶ Se reproduce aquí mismo</span>
+                    <div class="trailer-card"><iframe src="https://www.youtube.com/embed/zqLy6pPmupo" title="Counter-Strike 2 trailer" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+                    <h3>Counter-Strike 2</h3>
+                    <p>Shooter táctico 5v5, el estándar del FPS competitivo desde hace más de dos décadas. Sin pay-to-win.</p>
+                    <a href="https://store.steampowered.com/app/730/CounterStrike_2/" target="_blank" rel="noopener">Ver en Steam</a>
+                </div>
+                <div class="juego-catalogo">
+                    <span class="trailer-etiqueta">▶ Se reproduce aquí mismo</span>
+                    <div class="trailer-card"><iframe src="https://www.youtube.com/embed/9AsEwQJiQQE" title="Fortnite trailer" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+                    <h3>Fortnite</h3>
+                    <p>Battle royale + modo creativo + LEGO Fortnite. Constantemente actualizado con nuevos eventos.</p>
+                    <a href="https://www.fortnite.com/" target="_blank" rel="noopener">Descargar (Epic Games)</a>
+                </div>
+                <div class="juego-catalogo">
+                    <span class="trailer-etiqueta">▶ Se reproduce aquí mismo</span>
+                    <div class="trailer-card"><iframe src="https://www.youtube.com/embed/ZAkkNmPs2rg" title="Warframe trailer" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+                    <h3>Warframe</h3>
+                    <p>Acción cooperativa tipo looter-shooter con más de una década de contenido gratuito de calidad AAA.</p>
+                    <a href="https://store.steampowered.com/app/230410/Warframe/" target="_blank" rel="noopener">Ver en Steam</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="consola">
+            <h2>🎮 Consola</h2>
+            <p class="seccion-intro">Juegos gratis (free-to-play) para PlayStation, Xbox y Switch.</p>
+            <div class="catalogo-grid">
+                <div class="juego-catalogo">
+                    <span class="trailer-etiqueta">▶ Se reproduce aquí mismo</span>
+                    <div class="trailer-card"><iframe src="https://www.youtube.com/embed/9AsEwQJiQQE" title="Fortnite trailer" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+                    <h3>Fortnite</h3>
+                    <p>Disponible en PS5, Xbox Series y Switch, sin necesidad de suscripción online para jugarlo.</p>
+                    <a href="https://www.fortnite.com/" target="_blank" rel="noopener">Ver plataformas</a>
+                </div>
+                <div class="juego-catalogo">
+                    <span class="trailer-etiqueta">▶ Se reproduce aquí mismo</span>
+                    <div class="trailer-card"><iframe src="https://www.youtube.com/embed/6iJZYWtnIFU" title="Apex Legends trailer" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+                    <h3>Apex Legends</h3>
+                    <p>Battle royale de héroes con habilidades únicas por personaje, ritmo rápido y gunplay muy pulido.</p>
+                    <a href="https://www.ea.com/games/apex-legends" target="_blank" rel="noopener">Sitio oficial</a>
+                </div>
+                <div class="juego-catalogo">
+                    <span class="trailer-etiqueta">▶ Se reproduce aquí mismo</span>
+                    <div class="trailer-card"><iframe src="https://www.youtube.com/embed/TiPNqKDtDXQ" title="Rocket League trailer" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+                    <h3>Rocket League</h3>
+                    <p>Fútbol con autos cohete. Fácil de aprender, muy difícil de dominar. Ideal para jugar con amigos.</p>
+                    <a href="https://www.rocketleague.com/" target="_blank" rel="noopener">Sitio oficial</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="navegador">
+            <h2>🌐 Navegador</h2>
+            <p class="seccion-intro">Juegos que puedes jugar sin descargar nada, directo desde el navegador.</p>
+            <div class="catalogo-grid">
+                <div class="juego-catalogo">
+                    <span class="trailer-etiqueta">▶ Se reproduce aquí mismo</span>
+                    <div class="trailer-card"><iframe src="https://www.youtube.com/embed/WcJDJSJx4Wo" title="Slither.io trailer" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+                    <h3>Slither.io</h3>
+                    <p>El clásico juego de la serpiente, versión multijugador online. Directo en el navegador, sin registro.</p>
+                    <a href="https://slither.io/" target="_blank" rel="noopener">Jugar ahora</a>
+                </div>
+                <div class="juego-catalogo">
+                    <span class="trailer-etiqueta">▶ Se reproduce aquí mismo</span>
+                    <div class="trailer-card"><iframe src="https://www.youtube.com/embed/wFFtZfvsfVY" title="Subway Surfers trailer" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+                    <h3>Subway Surfers</h3>
+                    <p>Corredor infinito esquivando trenes. Uno de los juegos más jugados de navegador en el mundo.</p>
+                    <a href="https://poki.com/es/g/subway-surfers" target="_blank" rel="noopener">Jugar en Poki</a>
+                </div>
+                <div class="juego-catalogo">
+                    <span class="trailer-etiqueta">▶ Se reproduce aquí mismo</span>
+                    <div class="trailer-card"><iframe src="https://www.youtube.com/embed/eKW4WwHEqpE" title="Moto X3M trailer" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+                    <h3>Moto X3M</h3>
+                    <p>Carreras de motocross con física de daño, niveles cortos y muy adictivos.</p>
+                    <a href="https://poki.com/es/g/moto-x3m" target="_blank" rel="noopener">Jugar en Poki</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="jugar">
+            <h2>🕹️ Jugar ahora</h2>
+            <p class="seccion-intro">Juego de memoria: encuentra las 8 parejas con el menor número de movimientos.</p>
+            <p class="reglas-juego">📋 Reglas: voltea 2 cartas por turno. Si combinan, quedan destapadas. Tienes un límite de <strong id="limite-texto">15</strong> movimientos para encontrar las 8 parejas.</p>
+            <div id="juego-embebido">
+                <div class="memoria-info">
+                    <span>Movimientos: <span id="contador-movimientos">0</span></span>
+                    <button id="iniciar-memoria">▶ Iniciar</button>
+                    <button id="reiniciar-juego">🔄 Reiniciar</button>
+                </div>
+                <p id="memoria-mensaje">Presiona ▶ Iniciar para comenzar</p>
+                <div id="tablero-memoria"><div class="portada-juego"><i class="fa-solid fa-brain portada-fondo"></i><i class="fa-solid fa-brain"></i><p>Juego de Memoria</p><span>Presiona ▶ Iniciar para comenzar</span></div></div>
+                <div id="memoria-guardar-nombre" style="display: none;">
+                    <input type="text" id="memoria-nombre-input" maxlength="12" placeholder="Tu nombre">
+                    <button id="memoria-guardar-btn">Guardar</button>
+                </div>
+                <div class="snake-tabla">
+                    <h4>🏆 Mejores 10 (menos movimientos)</h4>
+                    <ol id="memoria-top10"></ol>
+                </div>
+            </div>
+
+            <div class="snake-juego">
+                <h3>🐍 OMAREX Snake</h3>
+                <p class="reglas-juego">📋 Usa las flechas del teclado (o los botones abajo en celular) para moverte. Come los puntos verdes para crecer y sumar puntos. Los diamantes 💎 dorados dan +50 puntos y 5 segundos de modo turbo. Si llegas a un borde, apareces del otro lado — ¡no choques contigo mismo ni con los ladrillos 🧱!</p>
+                <div class="snake-info">
+                    <span>Puntos: <span id="snake-puntos">0</span></span>
+                    <span>Nivel: <span id="snake-nivel">1</span></span>
+                    <span>Récord: <span id="snake-record">0</span></span>
+                </div>
+                <div class="snake-skins">
+                    <button class="skin-btn activo" data-skin="neon">🟢 Neón</button>
+                    <button class="skin-btn" data-skin="fuego">🔥 Fuego</button>
+                    <button class="skin-btn" data-skin="cyber">🔮 Cyber</button>
+                    <button class="skin-btn" data-skin="dorado">👑 Dorado</button>
+                </div>
+                <div class="snake-canvas-wrap"><canvas id="snake-canvas" width="640" height="400"></canvas><div id="snake-portada" class="portada-juego"><i class="fa-solid fa-worm portada-fondo"></i><i class="fa-solid fa-worm"></i><p>OMAREX Snake</p><span>Presiona ▶ Jugar para comenzar</span></div></div>
+                <div id="snake-mensaje"></div>
+                <div id="snake-guardar-nombre" style="display: none;">
+                    <input type="text" id="snake-nombre-input" maxlength="12" placeholder="Tu nombre">
+                    <button id="snake-guardar-btn">Guardar</button>
+                </div>
+                <div class="snake-tabla">
+                    <h4>🏆 Mejores 10 puntajes</h4>
+                    <ol id="snake-top5"></ol>
+                </div>
+                <button id="snake-iniciar">▶ Jugar</button>
+                <div class="snake-controles">
+                    <button class="snake-btn" id="btn-arriba">⬆</button>
+                    <div>
+                        <button class="snake-btn" id="btn-izquierda">⬅</button>
+                        <button class="snake-btn" id="btn-abajo">⬇</button>
+                        <button class="snake-btn" id="btn-derecha">➡</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 OMAREX Games</p>
+        <p><a href="https://omarex95.netlify.app/" target="_blank" rel="noopener">👤 Hecho por Omar — ver su portafolio</a></p>
+    </footer>
+
+<script>
+    const menuToggle = document.getElementById("menu-toggle");
+    const navUl = document.querySelector("nav ul");
+
+    menuToggle.addEventListener("click", function() {
+        navUl.classList.toggle("abierto");
+    });
+
+    document.querySelectorAll("nav a").forEach(function(link) {
+        link.addEventListener("click", function() {
+            navUl.classList.remove("abierto");
+        });
+    });
+
+    // ===== Sistema de sonido (sin archivos externos) =====
+    const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+
+    function reproducirTono(frecuencia, duracion, tipo, volumen) {
+        const oscilador = audioCtx.createOscillator();
+        const ganancia = audioCtx.createGain();
+        oscilador.type = tipo || "sine";
+        oscilador.frequency.value = frecuencia;
+        oscilador.connect(ganancia);
+        ganancia.connect(audioCtx.destination);
+        ganancia.gain.setValueAtTime(volumen !== undefined ? volumen : 0.15, audioCtx.currentTime);
+        ganancia.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + duracion);
+        oscilador.start();
+        oscilador.stop(audioCtx.currentTime + duracion);
+    }
+
+    function sonidoBarrido(frecInicial, frecFinal, duracion, tipo) {
+        const osc = audioCtx.createOscillator();
+        const ganancia = audioCtx.createGain();
+        osc.type = tipo || "sine";
+        osc.frequency.setValueAtTime(frecInicial, audioCtx.currentTime);
+        osc.frequency.exponentialRampToValueAtTime(frecFinal, audioCtx.currentTime + duracion);
+        osc.connect(ganancia);
+        ganancia.connect(audioCtx.destination);
+        ganancia.gain.setValueAtTime(0.15, audioCtx.currentTime);
+        ganancia.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + duracion);
+        osc.start();
+        osc.stop(audioCtx.currentTime + duracion);
+    }
+
+    function sonidoRuido(duracion, volumen) {
+        const tamano = audioCtx.sampleRate * duracion;
+        const buffer = audioCtx.createBuffer(1, tamano, audioCtx.sampleRate);
+        const datos = buffer.getChannelData(0);
+        for (let i = 0; i < tamano; i++) {
+            datos[i] = (Math.random() * 2 - 1) * (1 - i / tamano);
+        }
+        const fuente = audioCtx.createBufferSource();
+        fuente.buffer = buffer;
+        const filtro = audioCtx.createBiquadFilter();
+        filtro.type = "lowpass";
+        filtro.frequency.value = 700;
+        const ganancia = audioCtx.createGain();
+        ganancia.gain.value = volumen || 0.25;
+        fuente.connect(filtro);
+        filtro.connect(ganancia);
+        ganancia.connect(audioCtx.destination);
+        fuente.start();
+    }
+
+    function sonidoVoltear() {
+        reproducirTono(280 + Math.random() * 40, 0.07, "square");
+    }
+
+    function sonidoPareja() {
+        [523, 659, 784].forEach(function(f) {
+            reproducirTono(f, 0.25, "sine");
+        });
+    }
+
+    function sonidoError() {
+        sonidoBarrido(400, 120, 0.3, "sawtooth");
+    }
+
+    function sonidoPaso() {
+        const tono = turboActivo ? 260 : 200;
+        reproducirTono(tono, 0.05, "sine", 0.035);
+    }
+
+    function sonidoComer() {
+        sonidoBarrido(300, 750, 0.08, "square");
+    }
+
+    function sonidoDiamante() {
+        [523, 659, 784, 1047].forEach(function(f, i) {
+            setTimeout(function() { reproducirTono(f, 0.12, "sine"); }, i * 60);
+        });
+    }
+
+    function sonidoVictoria() {
+        const notas = [523, 659, 784, 1047];
+        notas.forEach(function(f, i) {
+            setTimeout(function() { reproducirTono(f, 0.2, "sine"); }, i * 130);
+        });
+        setTimeout(function() {
+            notas.forEach(function(f) { reproducirTono(f, 0.5, "sine"); });
+        }, 560);
+    }
+
+    function sonidoDerrota() {
+        sonidoBarrido(400, 80, 0.6, "sawtooth");
+        setTimeout(function() { sonidoRuido(0.3); }, 100);
+    }
+
+    const iconosMemoria = ["🎮", "🕹️", "👾", "🏆", "⚡", "👑", "🔥", "💎"];
+    const LIMITE_MOVIMIENTOS = 15;
+    let cartasVolteadas = [];
+    let paresEncontrados = 0;
+    let movimientos = 0;
+    let bloqueado = false;
+
+    let tablaMemoria = JSON.parse(localStorage.getItem("memoriaTop10")) || [];
+    let movimientosPendientes = null;
+
+    const cajaNombreMemoria = document.getElementById("memoria-guardar-nombre");
+    const inputNombreMemoria = document.getElementById("memoria-nombre-input");
+    const btnGuardarMemoria = document.getElementById("memoria-guardar-btn");
+
+    function actualizarTablaMemoria() {
+        const lista = document.getElementById("memoria-top10");
+        lista.innerHTML = "";
+
+        if (tablaMemoria.length === 0) {
+            lista.innerHTML = "<li>Todavía no hay puntajes</li>";
+        } else {
+            tablaMemoria.forEach(function(entrada) {
+                const li = document.createElement("li");
+                li.textContent = entrada.nombre + " — " + entrada.movimientos + " mov.";
+                lista.appendChild(li);
+            });
+        }
+    }
+
+    function guardarPuntajeMemoria(nombre, movimientosFinales) {
+        const nombreLimpio = nombre.trim() === "" ? "Jugador" : nombre.trim();
+        tablaMemoria.push({ nombre: nombreLimpio, movimientos: movimientosFinales });
+        tablaMemoria.sort(function(a, b) { return a.movimientos - b.movimientos; });
+        tablaMemoria = tablaMemoria.slice(0, 10);
+        localStorage.setItem("memoriaTop10", JSON.stringify(tablaMemoria));
+        actualizarTablaMemoria();
+    }
+
+    btnGuardarMemoria.addEventListener("click", function() {
+        if (movimientosPendientes === null) return;
+        guardarPuntajeMemoria(inputNombreMemoria.value, movimientosPendientes);
+        movimientosPendientes = null;
+        cajaNombreMemoria.style.display = "none";
+        inputNombreMemoria.value = "";
+    });
+
+    actualizarTablaMemoria();
+
+    function iniciarJuego() {
+        const tablero = document.getElementById("tablero-memoria");
+        const mensaje = document.getElementById("memoria-mensaje");
+        cajaNombreMemoria.style.display = "none";
+        movimientosPendientes = null;
+        tablero.innerHTML = "";
+        cartasVolteadas = [];
+        paresEncontrados = 0;
+        movimientos = 0;
+        bloqueado = true;
+        document.getElementById("contador-movimientos").textContent = "0";
+
+        const cartas = [...iconosMemoria, ...iconosMemoria];
+        cartas.sort(function() { return Math.random() - 0.5; });
+
+        const elementosCarta = [];
+
+        cartas.forEach(function(icono) {
+            const carta = document.createElement("div");
+            carta.classList.add("carta-memoria", "volteada");
+            carta.dataset.icono = icono;
+            carta.textContent = icono;
+            carta.addEventListener("click", function() {
+                voltearCarta(carta);
+            });
+            tablero.appendChild(carta);
+            elementosCarta.push(carta);
+        });
+
+        let segundosRestantes = 3;
+        mensaje.textContent = "👀 Memoriza las cartas... " + segundosRestantes;
+
+        const cuentaRegresiva = setInterval(function() {
+            segundosRestantes--;
+            if (segundosRestantes > 0) {
+                mensaje.textContent = "👀 Memoriza las cartas... " + segundosRestantes;
+            } else {
+                clearInterval(cuentaRegresiva);
+                mensaje.textContent = "";
+                elementosCarta.forEach(function(carta) {
+                    carta.classList.remove("volteada");
+                    carta.textContent = "❓";
+                });
+                bloqueado = false;
+            }
+        }, 1000);
+    }
+
+    function voltearCarta(carta) {
+        if (bloqueado) return;
+        if (carta.classList.contains("volteada") || carta.classList.contains("encontrada")) return;
+        if (cartasVolteadas.length === 2) return;
+        if (movimientos >= LIMITE_MOVIMIENTOS) return;
+
+        carta.classList.add("volteada");
+        carta.textContent = carta.dataset.icono;
+        cartasVolteadas.push(carta);
+
+        if (cartasVolteadas.length === 2) {
+            movimientos++;
+            document.getElementById("contador-movimientos").textContent = movimientos;
+            verificarPareja();
+        }
+    }
+
+    function verificarPareja() {
+        const carta1 = cartasVolteadas[0];
+        const carta2 = cartasVolteadas[1];
+
+        if (carta1.dataset.icono === carta2.dataset.icono) {
+            carta1.classList.add("encontrada");
+            carta2.classList.add("encontrada");
+            cartasVolteadas = [];
+            paresEncontrados++;
+
+            if (paresEncontrados === iconosMemoria.length) {
+                setTimeout(function() {
+                    document.getElementById("memoria-mensaje").textContent = "🎉 ¡Ganaste en " + movimientos + " movimientos!";
+                    movimientosPendientes = movimientos;
+                    cajaNombreMemoria.style.display = "flex";
+                    inputNombreMemoria.focus();
+                }, 300);
+            }
+        } else {
+            bloqueado = true;
+            setTimeout(function() {
+                carta1.classList.remove("volteada");
+                carta2.classList.remove("volteada");
+                carta1.textContent = "❓";
+                carta2.textContent = "❓";
+                cartasVolteadas = [];
+                bloqueado = false;
+
+                if (movimientos >= LIMITE_MOVIMIENTOS && paresEncontrados < iconosMemoria.length) {
+                    setTimeout(function() {
+                        document.getElementById("memoria-mensaje").textContent = "💀 Se acabaron los movimientos. Encontraste " + paresEncontrados + " de 8 parejas.";
+                    }, 200);
+                }
+            }, 800);
+        }
+    }
+
+    document.getElementById("reiniciar-juego").addEventListener("click", iniciarJuego);
+    document.getElementById("iniciar-memoria").addEventListener("click", iniciarJuego);
+
+
+    // ===== JUEGO DE SNAKE =====
+    const canvas = document.getElementById("snake-canvas");
+    const ctx = canvas.getContext("2d");
+    const tam = 20;
+    const columnas = canvas.width / tam;
+    const filas = canvas.height / tam;
+
+    let serpiente, direccion, siguienteDireccion, comida, diamante, diamanteTimeout, obstaculos, particulas;
+    let puntos, nivel, velocidadBase, jugando, turboActivo, turboTimeout;
+    let intervaloJuego;
+
+    const elPuntos = document.getElementById("snake-puntos");
+    const elNivel = document.getElementById("snake-nivel");
+    const elRecord = document.getElementById("snake-record");
+    const elMensaje = document.getElementById("snake-mensaje");
+    const btnIniciar = document.getElementById("snake-iniciar");
+
+    const API_PUNTAJES = "https://omarex-puntajes-server.onrender.com/puntajes";
+    let tablaPuntajes = [];
+    let puntajePendiente = null;
+
+    function actualizarTabla() {
+        const lista = document.getElementById("snake-top5");
+        lista.innerHTML = "";
+
+        if (tablaPuntajes.length === 0) {
+            lista.innerHTML = "<li>Todavía no hay puntajes</li>";
+        } else {
+            tablaPuntajes.forEach(function(entrada) {
+                const li = document.createElement("li");
+                li.textContent = entrada.nombre + " — " + entrada.puntos + " pts";
+                lista.appendChild(li);
+            });
+        }
+
+        elRecord.textContent = tablaPuntajes.length > 0 ? tablaPuntajes[0].puntos : 0;
+    }
+
+    function guardarPuntaje(nombre, puntosFinales) {
+        const nombreLimpio = nombre.trim() === "" ? "Jugador" : nombre.trim();
+        fetch(API_PUNTAJES, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ nombre: nombreLimpio, puntos: puntosFinales })
+        })
+        .then(function(respuesta) { return respuesta.json(); })
+        .then(function(listaActualizada) {
+            tablaPuntajes = listaActualizada;
+            actualizarTabla();
+        })
+        .catch(function(error) {
+            console.log("Error al guardar puntaje:", error);
+        });
+    }
+
+    function cargarPuntajes() {
+        fetch(API_PUNTAJES)
+        .then(function(respuesta) { return respuesta.json(); })
+        .then(function(lista) {
+            tablaPuntajes = lista;
+            actualizarTabla();
+        })
+        .catch(function(error) {
+            console.log("Error al cargar puntajes:", error);
+        });
+    }
+
+    const cajaNombre = document.getElementById("snake-guardar-nombre");
+    const inputNombre = document.getElementById("snake-nombre-input");
+    const btnGuardarNombre = document.getElementById("snake-guardar-btn");
+
+    btnGuardarNombre.addEventListener("click", function() {
+        if (puntajePendiente === null) return;
+        guardarPuntaje(inputNombre.value, puntajePendiente);
+        puntajePendiente = null;
+        cajaNombre.style.display = "none";
+        inputNombre.value = "";
+    });
+
+    cargarPuntajes();
+
+    function posicionAleatoria() {
+        return {
+            x: Math.floor(Math.random() * columnas),
+            y: Math.floor(Math.random() * filas)
+        };
+    }
+
+    function celdaOcupada(pos) {
+        for (let i = 0; i < serpiente.length; i++) {
+            if (serpiente[i].x === pos.x && serpiente[i].y === pos.y) return true;
+        }
+        for (let i = 0; i < obstaculos.length; i++) {
+            if (obstaculos[i].x === pos.x && obstaculos[i].y === pos.y) return true;
+        }
+        if (comida && comida.x === pos.x && comida.y === pos.y) return true;
+        if (diamante && diamante.x === pos.x && diamante.y === pos.y) return true;
+        return false;
+    }
+
+    function posicionLibre() {
+        let pos;
+        let intentos = 0;
+        do {
+            pos = posicionAleatoria();
+            intentos++;
+        } while (celdaOcupada(pos) && intentos < 200);
+        return pos;
+    }
+
+    function generarObstaculos() {
+        obstaculos = [];
+        const cantidad = 16;
+        for (let i = 0; i < cantidad; i++) {
+            let pos;
+            let intentos = 0;
+            do {
+                pos = posicionAleatoria();
+                intentos++;
+            } while (
+                intentos < 200 &&
+                (celdaOcupada(pos) || (Math.abs(pos.x - Math.floor(columnas / 2)) < 6 && Math.abs(pos.y - Math.floor(filas / 2)) < 4))
+            );
+            obstaculos.push(pos);
+        }
+    }
+
+    function reiniciarIntervalo() {
+        clearInterval(intervaloJuego);
+        const velocidadActual = turboActivo ? Math.max(velocidadBase / 2, 40) : velocidadBase;
+        intervaloJuego = setInterval(loopJuego, velocidadActual);
+    }
+
+    function iniciarSnake() {
+        const centroX = Math.floor(columnas / 2);
+        const centroY = Math.floor(filas / 2);
+        serpiente = [{x: centroX, y: centroY}, {x: centroX - 1, y: centroY}, {x: centroX - 2, y: centroY}];
+        direccion = {x: 1, y: 0};
+        siguienteDireccion = {x: 1, y: 0};
+        diamante = null;
+        obstaculos = [];
+        particulas = [];
+        generarObstaculos();
+        comida = posicionLibre();
+        clearTimeout(diamanteTimeout);
+        puntos = 0;
+        nivel = 1;
+        velocidadBase = 150;
+        turboActivo = false;
+        clearTimeout(turboTimeout);
+        jugando = true;
+        document.getElementById("snake-portada").style.display = "none";
+
+        elPuntos.textContent = puntos;
+        elNivel.textContent = nivel;
+        elMensaje.textContent = "";
+        cajaNombre.style.display = "none";
+        puntajePendiente = null;
+        btnIniciar.textContent = "⏸ Reiniciar";
+
+        dibujar();
+        reiniciarIntervalo();
+    }
+
+    function loopJuego() {
+        sonidoPaso();
+        direccion = siguienteDireccion;
+        const cabeza = {x: serpiente[0].x + direccion.x, y: serpiente[0].y + direccion.y};
+
+        if (cabeza.x < 0) cabeza.x = columnas - 1;
+        if (cabeza.x >= columnas) cabeza.x = 0;
+        if (cabeza.y < 0) cabeza.y = filas - 1;
+        if (cabeza.y >= filas) cabeza.y = 0;
+
+        for (let i = 0; i < serpiente.length; i++) {
+            if (serpiente[i].x === cabeza.x && serpiente[i].y === cabeza.y) {
+                return terminarJuego();
+            }
+        }
+
+        for (let i = 0; i < obstaculos.length; i++) {
+            if (obstaculos[i].x === cabeza.x && obstaculos[i].y === cabeza.y) {
+                return terminarJuego();
+            }
+        }
+
+        serpiente.unshift(cabeza);
+        let crecio = false;
+
+        if (cabeza.x === comida.x && cabeza.y === comida.y) {
+            puntos += 10;
+            crecio = true;
+            sonidoComer();
+            crearParticulas(comida, "#39ff14", 10);
+            comida = posicionLibre();
+
+            if (!diamante && Math.random() < 0.35) {
+                diamante = posicionLibre();
+                diamanteTimeout = setTimeout(function() {
+                    diamante = null;
+                }, 5000);
+            }
+
+            const nivelNuevo = Math.floor(puntos / 100) + 1;
+            if (nivelNuevo !== nivel) {
+                nivel = nivelNuevo;
+                velocidadBase = Math.max(150 - (nivel - 1) * 15, 60);
+                elNivel.textContent = nivel;
+                reiniciarIntervalo();
+            }
+        }
+
+        if (diamante && cabeza.x === diamante.x && cabeza.y === diamante.y) {
+            puntos += 50;
+            crecio = true;
+            sonidoDiamante();
+            crearParticulas(diamante, "#ffd700", 18);
+            diamante = null;
+            clearTimeout(diamanteTimeout);
+            activarTurbo();
+        }
+
+        if (!crecio) {
+            serpiente.pop();
+        }
+
+        elPuntos.textContent = puntos;
+        dibujar();
+    }
+
+    function activarTurbo() {
+        turboActivo = true;
+        elMensaje.textContent = "⚡ ¡MODO TURBO ACTIVADO!";
+        reiniciarIntervalo();
+
+        clearTimeout(turboTimeout);
+        turboTimeout = setTimeout(function() {
+            turboActivo = false;
+            elMensaje.textContent = "";
+            reiniciarIntervalo();
+        }, 5000);
+    }
+
+    function terminarJuego() {
+        clearInterval(intervaloJuego);
+        jugando = false;
+        sonidoDerrota();
+
+        const esRecordNuevo = tablaPuntajes.length === 0 || puntos > tablaPuntajes[0].puntos;
+
+        if (esRecordNuevo && puntos > 0) {
+            elMensaje.textContent = "🏆 ¡Nuevo récord! " + puntos + " puntos";
+        } else {
+            elMensaje.textContent = "💀 Juego terminado. Puntos: " + puntos;
+        }
+
+        if (puntos > 0) {
+            puntajePendiente = puntos;
+            cajaNombre.style.display = "block";
+            inputNombre.value = "";
+            inputNombre.focus();
+        }
+
+        btnIniciar.textContent = "▶ Jugar de nuevo";
+    }
+
+    const skins = {
+        neon:   { cabeza: "#ff2ec4", cuerpoA: "#39ff14", cuerpoB: "#1f8f0c", glow: "#39ff14" },
+        fuego:  { cabeza: "#ffcc00", cuerpoA: "#ff5500", cuerpoB: "#aa2200", glow: "#ff8800" },
+        cyber:  { cabeza: "#00eaff", cuerpoA: "#9b30ff", cuerpoB: "#4b0082", glow: "#9b30ff" },
+        dorado: { cabeza: "#fff5cc", cuerpoA: "#ffd700", cuerpoB: "#a67c00", glow: "#ffd700" }
+    };
+    let skinActual = "neon";
+
+    document.querySelectorAll(".skin-btn").forEach(function(boton) {
+        boton.addEventListener("click", function() {
+            document.querySelectorAll(".skin-btn").forEach(function(b) {
+                b.classList.remove("activo");
+            });
+            boton.classList.add("activo");
+            skinActual = boton.dataset.skin;
+        });
+    });
+
+    function crearParticulas(celda, color, cantidad) {
+        const c = centroCelda(celda);
+        for (let i = 0; i < cantidad; i++) {
+            const angulo = Math.random() * Math.PI * 2;
+            const velocidad = 1 + Math.random() * 2.5;
+            particulas.push({
+                x: c.x, y: c.y,
+                vx: Math.cos(angulo) * velocidad,
+                vy: Math.sin(angulo) * velocidad,
+                vida: 1,
+                color: color
+            });
+        }
+    }
+
+    function actualizarYDibujarParticulas() {
+        particulas.forEach(function(p) {
+            p.x += p.vx;
+            p.y += p.vy;
+            p.vida -= 0.06;
+        });
+        particulas = particulas.filter(function(p) { return p.vida > 0; });
+
+        particulas.forEach(function(p) {
+            ctx.globalAlpha = Math.max(p.vida, 0);
+            ctx.fillStyle = p.color;
+            ctx.beginPath();
+            ctx.arc(p.x, p.y, 3, 0, Math.PI * 2);
+            ctx.fill();
+        });
+        ctx.globalAlpha = 1;
+    }
+
+    function dibujarFondo() {
+        ctx.fillStyle = "#05050a";
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+        ctx.strokeStyle = "rgba(57, 255, 20, 0.07)";
+        ctx.lineWidth = 1;
+        for (let x = 0; x <= columnas; x++) {
+            ctx.beginPath();
+            ctx.moveTo(x * tam, 0);
+            ctx.lineTo(x * tam, canvas.height);
+            ctx.stroke();
+        }
+        for (let y = 0; y <= filas; y++) {
+            ctx.beginPath();
+            ctx.moveTo(0, y * tam);
+            ctx.lineTo(canvas.width, y * tam);
+            ctx.stroke();
+        }
+    }
+
+    function dibujarVineta() {
+        const grad = ctx.createRadialGradient(
+            canvas.width / 2, canvas.height / 2, canvas.width * 0.25,
+            canvas.width / 2, canvas.height / 2, canvas.width * 0.7
+        );
+        grad.addColorStop(0, "rgba(0,0,0,0)");
+        grad.addColorStop(1, "rgba(0,0,0,0.55)");
+        ctx.fillStyle = grad;
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+    }
+
+    function centroCelda(seg) {
+        return { x: seg.x * tam + tam / 2, y: seg.y * tam + tam / 2 };
+    }
+
+    function trazarCuerpo(ancho, color, glow) {
+        if (serpiente.length < 2) return;
+        ctx.lineJoin = "round";
+        ctx.lineCap = "round";
+        ctx.strokeStyle = color;
+        ctx.lineWidth = ancho;
+        ctx.shadowColor = glow;
+        ctx.shadowBlur = 10;
+
+        ctx.beginPath();
+        const inicio = centroCelda(serpiente[0]);
+        ctx.moveTo(inicio.x, inicio.y);
+        for (let i = 1; i < serpiente.length; i++) {
+            const p = centroCelda(serpiente[i]);
+            ctx.lineTo(p.x, p.y);
+        }
+        ctx.stroke();
+        ctx.shadowBlur = 0;
+    }
+
+    function dibujarCabeza(paleta) {
+        const c = centroCelda(serpiente[0]);
+        ctx.shadowColor = paleta.glow;
+        ctx.shadowBlur = 12;
+        ctx.fillStyle = paleta.cabeza;
+        ctx.beginPath();
+        ctx.arc(c.x, c.y, tam / 2, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.shadowBlur = 0;
+    }
+
+    function dibujarOjos() {
+        const cabeza = serpiente[0];
+        const cx = cabeza.x * tam + tam / 2;
+        const cy = cabeza.y * tam + tam / 2;
+        const off = tam / 4;
+        let ojo1, ojo2;
+
+        if (direccion.x === 1) {
+            ojo1 = {x: cx + off * 0.5, y: cy - off};
+            ojo2 = {x: cx + off * 0.5, y: cy + off};
+        } else if (direccion.x === -1) {
+            ojo1 = {x: cx - off * 0.5, y: cy - off};
+            ojo2 = {x: cx - off * 0.5, y: cy + off};
+        } else if (direccion.y === -1) {
+            ojo1 = {x: cx - off, y: cy - off * 0.5};
+            ojo2 = {x: cx + off, y: cy - off * 0.5};
+        } else {
+            ojo1 = {x: cx - off, y: cy + off * 0.5};
+            ojo2 = {x: cx + off, y: cy + off * 0.5};
+        }
+
+        [ojo1, ojo2].forEach(function(ojo) {
+            ctx.fillStyle = "#ffffff";
+            ctx.beginPath();
+            ctx.arc(ojo.x, ojo.y, tam / 8, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.fillStyle = "#000000";
+            ctx.beginPath();
+            ctx.arc(ojo.x, ojo.y, tam / 16, 0, Math.PI * 2);
+            ctx.fill();
+        });
+    }
+
+    function dibujar() {
+        dibujarFondo();
+
+        const paleta = skins[skinActual];
+
+        ctx.shadowColor = "#39ff14";
+        ctx.shadowBlur = 10;
+        ctx.fillStyle = "#39ff14";
+        ctx.beginPath();
+        ctx.arc(comida.x * tam + tam / 2, comida.y * tam + tam / 2, tam / 3, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.shadowBlur = 0;
+
+        if (diamante) {
+            ctx.font = tam + "px sans-serif";
+            ctx.textAlign = "center";
+            ctx.textBaseline = "middle";
+            ctx.fillText("💎", diamante.x * tam + tam / 2, diamante.y * tam + tam / 2);
+        }
+
+        ctx.font = (tam - 2) + "px sans-serif";
+        ctx.textAlign = "center";
+        ctx.textBaseline = "middle";
+        obstaculos.forEach(function(o) {
+            ctx.fillText("🧱", o.x * tam + tam / 2, o.y * tam + tam / 2);
+        });
+
+        const brilloExtra = Math.min(serpiente.length, 30) / 2;
+
+        trazarCuerpo(tam - 2, paleta.cuerpoB, paleta.glow);
+        trazarCuerpo(tam - 9, paleta.cuerpoA, paleta.glow);
+
+        dibujarCabeza(paleta);
+        dibujarOjos();
+        actualizarYDibujarParticulas();
+        dibujarVineta();
+    }
+
+    function cambiarDireccion(nuevaX, nuevaY) {
+        if (!jugando) return;
+        if (nuevaX === -direccion.x && nuevaY === -direccion.y) return;
+        siguienteDireccion = {x: nuevaX, y: nuevaY};
+    }
+
+    document.addEventListener("keydown", function(evento) {
+        if (evento.key === "ArrowUp") cambiarDireccion(0, -1);
+        if (evento.key === "ArrowDown") cambiarDireccion(0, 1);
+        if (evento.key === "ArrowLeft") cambiarDireccion(-1, 0);
+        if (evento.key === "ArrowRight") cambiarDireccion(1, 0);
+    });
+
+    document.getElementById("btn-arriba").addEventListener("click", function() { cambiarDireccion(0, -1); });
+    document.getElementById("btn-abajo").addEventListener("click", function() { cambiarDireccion(0, 1); });
+    document.getElementById("btn-izquierda").addEventListener("click", function() { cambiarDireccion(-1, 0); });
+    document.getElementById("btn-derecha").addEventListener("click", function() { cambiarDireccion(1, 0); });
+
+    btnIniciar.addEventListener("click", iniciarSnake);
+
+</script>
+
+<script data-goatcounter="https://omarexgames.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+
+</body>
+</html>
+
+</script>
+
+<script data-goatcounter="https://omarexgames.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+
+</body>
+</html>

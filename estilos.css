@@ -692,6 +692,23 @@ footer a:hover {
     z-index: 0;
 }
 
+/* Imagenes de fondo de las portadas (Memoria y Snake) */
+.portada-memoria {
+    background-image:
+        linear-gradient(180deg, rgba(5, 5, 10, 0.35), rgba(5, 5, 10, 0.8)),
+        url('portada-memoria.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.portada-snake {
+    background-image:
+        linear-gradient(180deg, rgba(5, 5, 10, 0.35), rgba(5, 5, 10, 0.8)),
+        url('portada-snake.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
 .portada-juego > i:not(.portada-fondo) {
     font-size: 48px;
     color: #39ff14;

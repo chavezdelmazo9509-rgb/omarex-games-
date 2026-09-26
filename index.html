@@ -163,7 +163,7 @@
                 </div>
                 <div class="snake-tabla">
                     <h4>🏆 Mejores 10 puntajes</h4>
-                    <ol id="snake-top5"></ol>
+                    <ol id="snake-top5"><li>⏳ Cargando marcador...</li></ol>
                 </div>
                 <button id="snake-iniciar">▶ Jugar</button>
                 <div class="snake-controles">
@@ -466,12 +466,17 @@
     const API_PUNTAJES = "https://omarex-puntajes-server.onrender.com/puntajes";
     let tablaPuntajes = [];
     let puntajePendiente = null;
+    let estadoMarcador = "cargando"; // "cargando" | "listo" | "error"
 
     function actualizarTabla() {
         const lista = document.getElementById("snake-top5");
         lista.innerHTML = "";
 
-        if (tablaPuntajes.length === 0) {
+        if (estadoMarcador === "cargando") {
+            lista.innerHTML = "<li>⏳ Cargando marcador...</li>";
+        } else if (estadoMarcador === "error") {
+            lista.innerHTML = "<li>⚠️ No se pudo cargar el marcador. Revisa tu conexión e intenta de nuevo.</li>";
+        } else if (tablaPuntajes.length === 0) {
             lista.innerHTML = "<li>Todavía no hay puntajes</li>";
         } else {
             tablaPuntajes.forEach(function(entrada) {
@@ -494,22 +499,30 @@
         .then(function(respuesta) { return respuesta.json(); })
         .then(function(listaActualizada) {
             tablaPuntajes = listaActualizada;
+            estadoMarcador = "listo";
             actualizarTabla();
         })
         .catch(function(error) {
             console.log("Error al guardar puntaje:", error);
+            estadoMarcador = "error";
+            actualizarTabla();
         });
     }
 
     function cargarPuntajes() {
+        estadoMarcador = "cargando";
+        actualizarTabla();
         fetch(API_PUNTAJES)
         .then(function(respuesta) { return respuesta.json(); })
         .then(function(lista) {
             tablaPuntajes = lista;
+            estadoMarcador = "listo";
             actualizarTabla();
         })
         .catch(function(error) {
             console.log("Error al cargar puntajes:", error);
+            estadoMarcador = "error";
+            actualizarTabla();
         });
     }
 

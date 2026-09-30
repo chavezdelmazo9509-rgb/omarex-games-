@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adivina el Anime — OMAREX Games</title>
+    <meta name="description" content="Minijuego gratis: adivina el anime con emojis y pistas. 10 rondas, 15 segundos cada una. ¿Cuánto sabes de anime?">
+    <link rel="canonical" href="https://chavezdelmazo9509-rgb.github.io/omarex-games-/adivina-anime/">
+    <meta name="theme-color" content="#0d0d1a">
+    <link rel="icon" type="image/jpeg" href="../omarex.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
+    <style>
+        /* Colores del juego (los mismos de tu página principal) */
+        :root {
+            --fondo: #0d0d1a;
+            --panel: #15152b;
+            --texto: #e0e0ff;
+            --verde: #39ff14;
+            --rosa: #ff2fd1;
+            --rojo: #ff3b5c;
+            --dorado: #ffd23f;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Rajdhani', sans-serif;
+            color: var(--texto);
+            background-color: var(--fondo);
+            background-image: radial-gradient(circle at top, #1a1a3a, var(--fondo));
+            min-height: 100vh;
+            padding: 20px 16px 40px;
+        }
+
+        .volver {
+            color: var(--verde);
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        .juego {
+            max-width: 560px;
+            margin: 20px auto 0;
+            text-align: center;
+        }
+
+        h1 {
+            font-family: 'Orbitron', sans-serif;
+            color: var(--verde);
+            text-shadow: 0 0 10px var(--verde);
+            font-size: clamp(22px, 6vw, 32px);
+            margin-bottom: 6px;
+        }
+
+        .subtitulo { opacity: 0.8; margin-bottom: 20px; font-size: 17px; }
+
+        .panel {
+            background: var(--panel);
+            border: 2px solid var(--verde);
+            box-shadow: 0 0 15px rgba(57, 255, 20, 0.35);
+            border-radius: 14px;
+            padding: 20px;
+        }
+
+        /* Barra de puntos, racha y ronda */
+        .marcador {
+            display: flex;
+            justify-content: space-between;
+            font-weight: 700;
+            font-size: 17px;
+            margin-bottom: 12px;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .barra-tiempo {
+            height: 8px;
+            background: #26264a;
+            border-radius: 99px;
+            overflow: hidden;
+            margin-bottom: 18px;
+        }
+
+        #tiempo-relleno {
+            height: 100%;
+            width: 100%;
+            background: var(--verde);
+            transition: width 0.1s linear, background 0.3s;
+        }
+
+        #emojis {
+            font-size: clamp(44px, 13vw, 68px);
+            letter-spacing: 6px;
+            min-height: 90px;
+            margin-bottom: 8px;
+        }
+
+        #pista {
+            font-size: 18px;
+            min-height: 28px;
+            color: var(--dorado);
+            margin-bottom: 16px;
+        }
+
+        .opciones {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        .opciones button, .boton {
+            font-family: 'Rajdhani', sans-serif;
+            font-weight: 700;
+            font-size: 17px;
+            color: var(--texto);
+            background: #1e1e3d;
+            border: 2px solid #3a3a6e;
+            border-radius: 10px;
+            padding: 14px 10px;
+            cursor: pointer;
+            transition: transform 0.1s, border-color 0.2s, background 0.2s;
+        }
+
+        .opciones button:hover:not(:disabled) { border-color: var(--verde); transform: translateY(-2px); }
+        .opciones button.correcta { background: #1c5e14; border-color: var(--verde); }
+        .opciones button.incorrecta { background: #6a1426; border-color: var(--rojo); }
+        .opciones button:disabled { cursor: default; }
+
+        .boton {
+            background: var(--verde);
+            color: #0d0d1a;
+            border-color: var(--verde);
+            font-family: 'Orbitron', sans-serif;
+            padding: 14px 28px;
+            margin-top: 18px;
+        }
+        .boton:hover { box-shadow: 0 0 15px var(--verde); }
+
+        #mensaje { min-height: 26px; margin-top: 14px; font-weight: 700; font-size: 18px; }
+
+        .oculto { display: none; }
+
+        .final-puntos {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 44px;
+            color: var(--verde);
+            text-shadow: 0 0 12px var(--verde);
+            margin: 10px 0;
+        }
+
+        .rango { font-size: 22px; color: var(--rosa); font-weight: 700; margin-bottom: 8px; }
+
+        /* Pequeña animación cuando la racha sube */
+        .salto { animation: salto 0.35s ease; }
+        @keyframes salto { 50% { transform: scale(1.35); } }
+
+        @media (max-width: 420px) {
+            .opciones { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <a class="volver" href="../index.html#jugar">⬅ Volver a OMAREX Games</a>
+
+    <div class="juego">
+        <h1>🎌 Adivina el Anime</h1>
+        <p class="subtitulo">10 rondas · 15 segundos cada una · ¡la racha multiplica tus puntos!</p>
+
+        <!-- Pantalla de inicio -->
+        <div class="panel" id="pantalla-inicio">
+            <p style="font-size:18px">Mira los emojis 👀 y elige el anime correcto.<br>
+            Si no sabes, pide una <strong>pista 💡</strong> (pero vale menos puntos).</p>
+            <p style="margin-top:12px">🏆 Tu récord: <strong id="record-inicio">0</strong></p>
+            <button class="boton" id="btn-empezar">▶ Jugar</button>
+        </div>
+
+        <!-- Pantalla del juego -->
+        <div class="panel oculto" id="pantalla-juego">
+            <div class="marcador">
+                <span>Ronda <span id="ronda">1</span>/10</span>
+                <span>🔥 Racha: <span id="racha">0</span></span>
+                <span>⭐ <span id="puntos">0</span></span>
+            </div>
+            <div class="barra-tiempo"><div id="tiempo-relleno"></div></div>
+            <div id="emojis"></div>
+            <div id="pista"></div>
+            <div class="opciones" id="opciones"></div>
+            <button class="boton" id="btn-pista" style="background:transparent;color:var(--dorado);border-color:var(--dorado)">💡 Pista</button>
+            <div id="mensaje"></div>
+        </div>
+
+        <!-- Pantalla final -->
+        <div class="panel oculto" id="pantalla-final">
+            <p>Tu puntuación</p>
+            <div class="final-puntos" id="final-puntos">0</div>
+            <div class="rango" id="rango"></div>
+            <p id="final-detalle"></p>
+            <p id="nuevo-record" style="color:var(--dorado);font-weight:700;margin-top:8px"></p>
+            <button class="boton" id="btn-otra">🔄 Jugar otra vez</button>
+        </div>
+    </div>
+
+<script>
+    // ====== 1. BANCO DE PREGUNTAS ======
+    // Para agregar un anime nuevo, copia una línea y cambia los datos.
+    const ANIMES = [
+        { nombre: "Naruto", emojis: "🍥🦊🍜", pista: "Un ninja que quiere ser Hokage" },
+        { nombre: "One Piece", emojis: "🏴‍☠️👒🍖", pista: "Un pirata de goma busca un tesoro" },
+        { nombre: "Dragon Ball", emojis: "🐉⚽🐒", pista: "Hay que juntar 7 esferas" },
+        { nombre: "Pokémon", emojis: "⚡🐭🔴", pista: "¡Atrápalos a todos!" },
+        { nombre: "Attack on Titan", emojis: "🧱👹⚔️", pista: "Gigantes detrás de murallas" },
+        { nombre: "Demon Slayer", emojis: "👺🗡️🌊", pista: "Su hermana vive en una caja" },
+        { nombre: "Death Note", emojis: "📓💀🍎", pista: "Escribes un nombre y..." },
+        { nombre: "My Hero Academia", emojis: "🦸‍♂️🏫💥", pista: "Nació sin poderes en un mundo de héroes" },
+        { nombre: "Jujutsu Kaisen", emojis: "👆👹🤞", pista: "Se comió el dedo de una maldición" },
+        { nombre: "Sailor Moon", emojis: "🌙👧✨", pista: "En el nombre de la Luna..." },
+        { nombre: "Chainsaw Man", emojis: "🪚🐶😈", pista: "Su perro es una motosierra" },
+        { nombre: "Spy x Family", emojis: "🕵️‍♂️🔫🥜", pista: "Una familia falsa con una niña telépata" },
+        { nombre: "Fullmetal Alchemist", emojis: "⚗️🦾🛡️", pista: "Dos hermanos y la ley del intercambio" },
+        { nombre: "Bleach", emojis: "🗡️👻🍓", pista: "Un chico de pelo naranja ve fantasmas" },
+        { nombre: "Hunter x Hunter", emojis: "🎣🧒⚡", pista: "Un niño con caña de pescar busca a su papá" },
+        { nombre: "One Punch Man", emojis: "👊🥚💪", pista: "Un héroe calvo que gana de un golpe" },
+        { nombre: "Tokyo Ghoul", emojis: "☕👁️🦴", pista: "Mitad humano, mitad ghoul" },
+        { nombre: "Haikyuu!!", emojis: "🏐🦅🧡", pista: "Un chico bajito que salta muy alto" },
+        { nombre: "Blue Lock", emojis: "⚽🔒🔵", pista: "Una cárcel para crear al mejor delantero" },
+        { nombre: "Mi Vecino Totoro", emojis: "🌳🐻🚌", pista: "Un gato-autobús de Ghibli" },
+        { nombre: "El Viaje de Chihiro", emojis: "🛁🐉🐷", pista: "Sus padres se vuelven cerdos" },
+        { nombre: "Doraemon", emojis: "🐱🔵🚪", pista: "Un gato robot con bolsillo mágico" },
+        { nombre: "Saint Seiya", emojis: "⭐🛡️🐴", pista: "Caballeros que protegen a Atenea" },
+        { nombre: "Solo Leveling", emojis: "🎮⬆️🗡️", pista: "El cazador más débil sube de nivel" },
+        { nombre: "Dan Da Dan", emojis: "👽👻🥚", pista: "Aliens contra fantasmas" },
+        { nombre: "Frieren", emojis: "🧝‍♀️🪄⏳", pista: "Una elfa después de derrotar al rey demonio" },
+        { nombre: "Captain Tsubasa", emojis: "⚽👦🌅", pista: "Supercampeones" },
+        { nombre: "Sword Art Online", emojis: "🎮⚔️🥽", pista: "Atrapados en un videojuego de realidad virtual" }
+    ];
+
+    const TOTAL_RONDAS = 10;
+    const SEGUNDOS = 15;
+
+    // ====== 2. VARIABLES DEL JUEGO ======
+    let preguntas = [];   // las 10 preguntas de esta partida
+    let ronda = 0;
+    let puntos = 0;
+    let racha = 0;
+    let aciertos = 0;
+    let usoPista = false;
+    let tiempoRestante = SEGUNDOS;
+    let temporizador = null;
+
+    const $ = (id) => document.getElementById(id);
+
+    // ====== 3. RÉCORD GUARDADO EN EL NAVEGADOR ======
+    function leerRecord() {
+        try { return Number(localStorage.getItem("animeRecord")) || 0; } catch (e) { return 0; }
+    }
+    function guardarRecord(valor) {
+        try { localStorage.setItem("animeRecord", valor); } catch (e) {}
+    }
+
+    // Mezcla una lista al azar (como barajar cartas)
+    function mezclar(lista) {
+        const copia = [...lista];
+        for (let i = copia.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [copia[i], copia[j]] = [copia[j], copia[i]];
+        }
+        return copia;
+    }
+
+    function mostrarPantalla(id) {
+        ["pantalla-inicio", "pantalla-juego", "pantalla-final"].forEach(p => $(p).classList.add("oculto"));
+        $(id).classList.remove("oculto");
+    }
+
+    // ====== 4. EMPEZAR PARTIDA ======
+    function empezar() {
+        preguntas = mezclar(ANIMES).slice(0, TOTAL_RONDAS);
+        ronda = 0; puntos = 0; racha = 0; aciertos = 0;
+        $("puntos").textContent = 0;
+        $("racha").textContent = 0;
+        mostrarPantalla("pantalla-juego");
+        siguienteRonda();
+    }
+
+    // ====== 5. MOSTRAR UNA PREGUNTA ======
+    function siguienteRonda() {
+        if (ronda >= TOTAL_RONDAS) return terminar();
+
+        const actual = preguntas[ronda];
+        usoPista = false;
+        $("ronda").textContent = ronda + 1;
+        $("emojis").textContent = actual.emojis;
+        $("pista").textContent = "";
+        $("mensaje").textContent = "";
+        $("btn-pista").disabled = false;
+        $("btn-pista").style.opacity = 1;
+
+        // 1 respuesta correcta + 3 incorrectas al azar
+        const incorrectas = mezclar(ANIMES.filter(a => a.nombre !== actual.nombre)).slice(0, 3);
+        const opciones = mezclar([actual, ...incorrectas]);
+
+        const cont = $("opciones");
+        cont.innerHTML = "";
+        opciones.forEach(op => {
+            const b = document.createElement("button");
+            b.textContent = op.nombre;
+            b.onclick = () => responder(b, op.nombre === actual.nombre);
+            cont.appendChild(b);
+        });
+
+        iniciarTiempo();
+    }
+
+    // ====== 6. CRONÓMETRO ======
+    function iniciarTiempo() {
+        clearInterval(temporizador);
+        tiempoRestante = SEGUNDOS;
+        pintarTiempo();
+        temporizador = setInterval(() => {
+            tiempoRestante -= 0.1;
+            pintarTiempo();
+            if (tiempoRestante <= 0) responder(null, false);
+        }, 100);
+    }
+
+    function pintarTiempo() {
+        const porcentaje = Math.max(0, tiempoRestante / SEGUNDOS * 100);
+        const barra = $("tiempo-relleno");
+        barra.style.width = porcentaje + "%";
+        barra.style.background = porcentaje > 50 ? "var(--verde)" : porcentaje > 25 ? "var(--dorado)" : "var(--rojo)";
+    }
+
+    // ====== 7. CUANDO EL JUGADOR RESPONDE ======
+    function responder(boton, esCorrecta) {
+        clearInterval(temporizador);
+        const actual = preguntas[ronda];
+
+        // Bloquear botones y marcar la correcta en verde
+        document.querySelectorAll("#opciones button").forEach(b => {
+            b.disabled = true;
+            if (b.textContent === actual.nombre) b.classList.add("correcta");
+        });
+        $("btn-pista").disabled = true;
+
+        if (esCorrecta) {
+            racha++;
+            aciertos++;
+            // Puntos: 100 base + bonus por tiempo, x racha, mitad si usó pista
+            let ganados = Math.round((100 + tiempoRestante * 10) * Math.min(racha, 5));
+            if (usoPista) ganados = Math.round(ganados / 2);
+            puntos += ganados;
+            $("mensaje").style.color = "var(--verde)";
+            $("mensaje").textContent = `¡Correcto! +${ganados} ${racha >= 3 ? "🔥 ¡EN RACHA!" : ""}`;
+        } else {
+            racha = 0;
+            if (boton) boton.classList.add("incorrecta");
+            $("mensaje").style.color = "var(--rojo)";
+            $("mensaje").textContent = boton ? `❌ Era ${actual.nombre}` : `⏰ ¡Se acabó el tiempo! Era ${actual.nombre}`;
+        }
+
+        $("puntos").textContent = puntos;
+        $("racha").textContent = racha;
+        $("racha").classList.remove("salto");
+        void $("racha").offsetWidth; // reinicia la animación
+        if (esCorrecta) $("racha").classList.add("salto");
+
+        ronda++;
+        setTimeout(siguienteRonda, 1400);
+    }
+
+    function pedirPista() {
+        usoPista = true;
+        $("pista").textContent = "💡 " + preguntas[ronda].pista;
+        $("btn-pista").disabled = true;
+        $("btn-pista").style.opacity = 0.4;
+    }
+
+    // ====== 8. FIN DE LA PARTIDA ======
+    function terminar() {
+        mostrarPantalla("pantalla-final");
+        $("final-puntos").textContent = puntos;
+        $("final-detalle").textContent = `Acertaste ${aciertos} de ${TOTAL_RONDAS}`;
+
+        let rango = "🥚 Novato del anime";
+        if (aciertos >= 4) rango = "🍥 Genin otaku";
+        if (aciertos >= 7) rango = "⚔️ Cazador de animes";
+        if (aciertos >= 9) rango = "👑 Rey OTAKU";
+        if (aciertos === 10) rango = "🐉 ¡LEYENDA OMAREX!";
+        $("rango").textContent = rango;
+
+        const record = leerRecord();
+        if (puntos > record) {
+            guardarRecord(puntos);
+            $("nuevo-record").textContent = "🏆 ¡NUEVO RÉCORD!";
+        } else {
+            $("nuevo-record").textContent = `Récord: ${record}`;
+        }
+        $("record-inicio").textContent = leerRecord();
+    }
+
+    // ====== 9. CONECTAR BOTONES ======
+    $("btn-empezar").onclick = empezar;
+    $("btn-otra").onclick = empezar;
+    $("btn-pista").onclick = pedirPista;
+    $("record-inicio").textContent = leerRecord();
+</script>
+</body>
+</html>

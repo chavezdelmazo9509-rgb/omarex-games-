@@ -760,10 +760,9 @@ footer a:hover {
     display: flex;
     align-items: center;
     justify-content: center;
+    /* El centro se oscurece para que se lea el título; los lados muestran a los personajes */
     background:
-        radial-gradient(circle at 20% 20%, rgba(255, 46, 196, 0.45), transparent 50%),
-        radial-gradient(circle at 80% 85%, rgba(57, 255, 20, 0.35), transparent 50%),
-        linear-gradient(rgba(5, 5, 10, 0.45), rgba(5, 5, 10, 0.7)),
+        radial-gradient(ellipse at center, rgba(5, 5, 10, 0.72) 0%, rgba(5, 5, 10, 0.35) 45%, rgba(5, 5, 10, 0) 75%),
         url('portada-anime.jpg') center / cover no-repeat,
         radial-gradient(circle at 50% 50%, #2a1050, #05050a 75%);
     overflow: hidden;
@@ -774,7 +773,7 @@ footer a:hover {
     content: "";
     position: absolute;
     inset: -50%;
-    background: repeating-conic-gradient(rgba(255, 255, 255, 0.05) 0deg 6deg, transparent 6deg 18deg);
+    background: repeating-conic-gradient(rgba(255, 255, 255, 0.03) 0deg 6deg, transparent 6deg 18deg);
     animation: animeGirar 40s linear infinite;
 }
 
@@ -785,7 +784,7 @@ footer a:hover {
     position: absolute;
     bottom: -60px;
     font-size: 34px;
-    opacity: 0.55;
+    opacity: 0.35;
     animation: animeFlotar 9s linear infinite;
 }
 .anime-flotantes span:nth-child(1)  { left: 5%;  animation-delay: 0s; }
@@ -825,11 +824,11 @@ footer a:hover {
     font-family: 'Orbitron', sans-serif;
     font-size: clamp(26px, 7vw, 40px);
     color: #ff2ec4;
-    text-shadow: 0 0 12px #ff2ec4, 3px 3px 0 #39ff14;
+    text-shadow: 0 0 12px #ff2ec4, 3px 3px 0 #39ff14, 0 4px 14px #000;
     line-height: 1.1;
 }
 
-.anime-portada-sub { font-size: 18px; color: #ffffff; font-weight: 700; }
+.anime-portada-sub { font-size: 18px; color: #ffffff; font-weight: 700; text-shadow: 0 2px 8px #000; }
 .anime-portada-record { font-size: 15px; color: #ffd23f; }
 
 .anime-boton {
@@ -929,6 +928,11 @@ footer a:hover {
 
 .anime-salto { display: inline-block; animation: animeSalto 0.35s ease; }
 @keyframes animeSalto { 50% { transform: scale(1.35); } }
+
+@media (max-width: 600px) {
+    /* En celular la imagen se recorta: se muestra el lado del ninja y la maga */
+    .anime-portada { background-position: center, 12% center, center; }
+}
 
 @media (max-width: 420px) {
     #anime-opciones { grid-template-columns: 1fr; }

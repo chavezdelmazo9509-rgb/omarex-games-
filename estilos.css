@@ -738,3 +738,196 @@ footer a:hover {
     color: #a0a0c0;
     z-index: 1;
 }
+
+/* ===== Adivina el Anime ===== */
+.anime-caja {
+    position: relative;
+    min-height: 420px;
+    border: 2px solid #39ff14;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(57, 255, 20, 0.35);
+    background: #15152b;
+    overflow: hidden;
+    padding: 20px;
+}
+
+.anime-oculto { display: none !important; }
+
+/* Portada */
+.anime-portada {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background:
+        radial-gradient(circle at 20% 20%, rgba(255, 46, 196, 0.45), transparent 50%),
+        radial-gradient(circle at 80% 85%, rgba(57, 255, 20, 0.35), transparent 50%),
+        radial-gradient(circle at 50% 50%, #2a1050, #05050a 75%);
+    overflow: hidden;
+}
+
+/* Rayos de fondo estilo anime */
+.anime-portada::before {
+    content: "";
+    position: absolute;
+    inset: -50%;
+    background: repeating-conic-gradient(rgba(255, 255, 255, 0.05) 0deg 6deg, transparent 6deg 18deg);
+    animation: animeGirar 40s linear infinite;
+}
+
+@keyframes animeGirar { to { transform: rotate(360deg); } }
+
+/* Emojis que flotan */
+.anime-flotantes span {
+    position: absolute;
+    bottom: -60px;
+    font-size: 34px;
+    opacity: 0.55;
+    animation: animeFlotar 9s linear infinite;
+}
+.anime-flotantes span:nth-child(1)  { left: 5%;  animation-delay: 0s; }
+.anime-flotantes span:nth-child(2)  { left: 15%; animation-delay: 4s;  font-size: 44px; }
+.anime-flotantes span:nth-child(3)  { left: 25%; animation-delay: 2s; }
+.anime-flotantes span:nth-child(4)  { left: 36%; animation-delay: 6s; }
+.anime-flotantes span:nth-child(5)  { left: 47%; animation-delay: 1s;  font-size: 28px; }
+.anime-flotantes span:nth-child(6)  { left: 58%; animation-delay: 5s; }
+.anime-flotantes span:nth-child(7)  { left: 68%; animation-delay: 3s;  font-size: 42px; }
+.anime-flotantes span:nth-child(8)  { left: 78%; animation-delay: 7s; }
+.anime-flotantes span:nth-child(9)  { left: 87%; animation-delay: 2.5s; }
+.anime-flotantes span:nth-child(10) { left: 94%; animation-delay: 5.5s; font-size: 28px; }
+
+@keyframes animeFlotar {
+    from { transform: translateY(0) rotate(0deg); }
+    to   { transform: translateY(-560px) rotate(360deg); }
+}
+
+.anime-portada-contenido {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding: 16px;
+}
+
+.anime-portada-emojis {
+    font-size: 64px;
+    animation: animeLatido 1.6s ease-in-out infinite;
+}
+
+@keyframes animeLatido { 50% { transform: scale(1.12); } }
+
+.anime-portada-titulo {
+    font-family: 'Orbitron', sans-serif;
+    font-size: clamp(26px, 7vw, 40px);
+    color: #ff2ec4;
+    text-shadow: 0 0 12px #ff2ec4, 3px 3px 0 #39ff14;
+    line-height: 1.1;
+}
+
+.anime-portada-sub { font-size: 18px; color: #ffffff; font-weight: 700; }
+.anime-portada-record { font-size: 15px; color: #ffd23f; }
+
+.anime-boton {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 18px;
+    background: #39ff14;
+    color: #0d0d1a;
+    border: none;
+    border-radius: 10px;
+    padding: 14px 36px;
+    margin: 8px 0;
+    cursor: pointer;
+    box-shadow: 0 0 18px #39ff14;
+    animation: animeLatido 1.6s ease-in-out infinite;
+}
+.anime-boton:hover { background: #ff2ec4; box-shadow: 0 0 18px #ff2ec4; }
+
+/* Pantalla de juego */
+.anime-marcador {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+    font-weight: 700;
+    font-size: 17px;
+    margin-bottom: 12px;
+}
+
+.anime-barra {
+    height: 8px;
+    background: #26264a;
+    border-radius: 99px;
+    overflow: hidden;
+    margin-bottom: 18px;
+}
+
+#anime-tiempo-relleno {
+    height: 100%;
+    width: 100%;
+    background: #39ff14;
+    transition: width 0.1s linear, background 0.3s;
+}
+
+#anime-emojis { font-size: clamp(44px, 13vw, 68px); letter-spacing: 6px; min-height: 90px; }
+#anime-pista { font-size: 18px; min-height: 28px; color: #ffd23f; margin-bottom: 14px; }
+
+#anime-opciones {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+#anime-opciones button {
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 700;
+    font-size: 17px;
+    color: #e0e0ff;
+    background: #1e1e3d;
+    border: 2px solid #3a3a6e;
+    border-radius: 10px;
+    padding: 14px 10px;
+    cursor: pointer;
+    transition: transform 0.1s, border-color 0.2s;
+}
+#anime-opciones button:hover:not(:disabled) { border-color: #39ff14; transform: translateY(-2px); }
+#anime-opciones button.correcta { background: #1c5e14; border-color: #39ff14; }
+#anime-opciones button.incorrecta { background: #6a1426; border-color: #ff3b5c; }
+#anime-opciones button:disabled { cursor: default; }
+
+#anime-btn-pista {
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    background: transparent;
+    color: #ffd23f;
+    border: 2px solid #ffd23f;
+    border-radius: 10px;
+    padding: 10px 24px;
+    margin-top: 16px;
+    cursor: pointer;
+}
+#anime-btn-pista:disabled { opacity: 0.4; cursor: default; }
+
+#anime-mensaje { min-height: 26px; margin-top: 12px; font-weight: 700; font-size: 18px; }
+
+/* Pantalla final */
+#anime-final { padding-top: 30px; }
+#anime-final-puntos {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 44px;
+    color: #39ff14;
+    text-shadow: 0 0 12px #39ff14;
+    margin: 8px 0;
+}
+#anime-rango { font-size: 22px; color: #ff2ec4; font-weight: 700; margin-bottom: 6px; }
+#anime-nuevo-record { color: #ffd23f; font-weight: 700; margin-top: 6px; }
+
+.anime-salto { display: inline-block; animation: animeSalto 0.35s ease; }
+@keyframes animeSalto { 50% { transform: scale(1.35); } }
+
+@media (max-width: 420px) {
+    #anime-opciones { grid-template-columns: 1fr; }
+}

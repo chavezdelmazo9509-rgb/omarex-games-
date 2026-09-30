@@ -197,10 +197,49 @@
                 </div>
             </div>
 
-            <div class="snake-juego">
+            <div class="snake-juego" id="adivina-anime">
                 <h3>🎌 Adivina el Anime</h3>
-                <p class="reglas-juego">📋 Mira los emojis y elige el anime correcto entre 4 opciones. 10 rondas, 15 segundos cada una. ¡Mientras más rápido y más racha, más puntos!</p>
-                <a href="adivina-anime/" class="boton-apoyo">▶ Jugar Adivina el Anime</a>
+                <p class="reglas-juego">📋 Mira los emojis y elige el anime correcto entre 4 opciones. 10 rondas, 15 segundos cada una. ¡Mientras más rápido y más racha, más puntos! Si no sabes, pide una 💡 pista (vale la mitad).</p>
+                <div class="anime-caja">
+                    <!-- Portada -->
+                    <div id="anime-portada" class="anime-portada">
+                        <div class="anime-flotantes" aria-hidden="true">
+                            <span>🍥</span><span>🐉</span><span>👒</span><span>⚡</span><span>🗡️</span><span>🦊</span><span>👹</span><span>🌙</span><span>🏐</span><span>👽</span>
+                        </div>
+                        <div class="anime-portada-contenido">
+                            <div class="anime-portada-emojis">🦊❓🐉</div>
+                            <p class="anime-portada-titulo">ADIVINA EL ANIME</p>
+                            <span class="anime-portada-sub">¿Eres un verdadero otaku? 🎌</span>
+                            <button id="anime-btn-empezar" class="anime-boton">▶ Jugar</button>
+                            <span class="anime-portada-record">🏆 Tu récord: <strong id="anime-record">0</strong></span>
+                        </div>
+                    </div>
+
+                    <!-- Juego -->
+                    <div id="anime-juego" class="anime-oculto">
+                        <div class="anime-marcador">
+                            <span>Ronda <span id="anime-ronda">1</span>/10</span>
+                            <span>🔥 Racha: <span id="anime-racha">0</span></span>
+                            <span>⭐ <span id="anime-puntos">0</span></span>
+                        </div>
+                        <div class="anime-barra"><div id="anime-tiempo-relleno"></div></div>
+                        <div id="anime-emojis"></div>
+                        <div id="anime-pista"></div>
+                        <div id="anime-opciones"></div>
+                        <button id="anime-btn-pista">💡 Pista</button>
+                        <div id="anime-mensaje"></div>
+                    </div>
+
+                    <!-- Final -->
+                    <div id="anime-final" class="anime-oculto">
+                        <p>Tu puntuación</p>
+                        <div id="anime-final-puntos">0</div>
+                        <div id="anime-rango"></div>
+                        <p id="anime-final-detalle"></p>
+                        <p id="anime-nuevo-record"></p>
+                        <button id="anime-btn-otra" class="anime-boton">🔄 Jugar otra vez</button>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -962,6 +1001,8 @@
 
 </script>
 
+<script src="adivina-anime/animes.js"></script>
+<script src="adivina-anime/juego.js"></script>
 <script data-goatcounter="https://omarexgames.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 
 </body>

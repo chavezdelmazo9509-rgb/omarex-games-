@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generador de Títulos — OMAREX</title>
+    <!-- Página privada de Omar: que Google no la muestre -->
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="theme-color" content="#0d0d1a">
+    <link rel="icon" type="image/jpeg" href="../omarex.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --fondo: #0d0d1a;
+            --panel: #15152b;
+            --tarjeta: #1e1e3d;
+            --borde: #3a3a6e;
+            --texto: #e0e0ff;
+            --suave: #a0a0c0;
+            --verde: #39ff14;
+            --rosa: #ff2ec4;
+            --dorado: #ffd23f;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Rajdhani', sans-serif;
+            color: var(--texto);
+            background-color: var(--fondo);
+            background-image: radial-gradient(circle at top, #1a1a3a, var(--fondo));
+            min-height: 100vh;
+            padding: 20px 16px 60px;
+        }
+
+        button, input, select { font-family: inherit; font-size: 16px; }
+        button { cursor: pointer; }
+
+        .contenedor { max-width: 760px; margin: 0 auto; }
+
+        .menu { display: flex; justify-content: center; gap: 10px; margin-bottom: 14px; flex-wrap: wrap; }
+        .menu a {
+            color: var(--texto);
+            text-decoration: none;
+            font-weight: 700;
+            border: 1px solid var(--borde);
+            border-radius: 99px;
+            padding: 6px 14px;
+        }
+        .menu a.activo { border-color: var(--verde); color: var(--verde); }
+
+        header { text-align: center; margin-bottom: 20px; }
+        header img { width: 90px; }
+        h1 {
+            font-family: 'Orbitron', sans-serif;
+            color: var(--verde);
+            text-shadow: 0 0 10px var(--verde);
+            font-size: clamp(22px, 6vw, 32px);
+        }
+        .subtitulo { color: var(--suave); font-size: 17px; }
+
+        .panel {
+            background: var(--panel);
+            border: 1px solid var(--borde);
+            border-radius: 12px;
+            padding: 18px;
+            margin-bottom: 16px;
+        }
+
+        label { display: block; font-weight: 700; margin: 12px 0 6px; }
+        label:first-child { margin-top: 0; }
+
+        input[type=text] {
+            width: 100%;
+            background: #0a0a14;
+            color: var(--texto);
+            border: 1px solid var(--borde);
+            border-radius: 8px;
+            padding: 12px;
+        }
+        input[type=text]:focus { outline: none; border-color: var(--rosa); }
+
+        /* Botones para elegir (tipo y momento) */
+        .chips { display: flex; flex-wrap: wrap; gap: 8px; }
+        .chips button {
+            background: var(--tarjeta);
+            color: var(--texto);
+            border: 2px solid var(--borde);
+            border-radius: 99px;
+            padding: 8px 14px;
+            font-weight: 700;
+        }
+        .chips button:hover { border-color: var(--rosa); }
+        .chips button.elegido { border-color: var(--verde); background: #1c3a14; color: #fff; }
+
+        .boton {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 17px;
+            border: none;
+            border-radius: 10px;
+            padding: 14px 24px;
+            color: #0d0d1a;
+            background: var(--verde);
+            box-shadow: 0 0 14px rgba(57, 255, 20, 0.5);
+            width: 100%;
+            margin-top: 18px;
+        }
+        .boton:hover { background: var(--rosa); color: #fff; box-shadow: 0 0 14px rgba(255, 46, 196, 0.6); }
+
+        h2 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 16px;
+            color: var(--rosa);
+            margin-bottom: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .titulo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--tarjeta);
+            border: 1px solid var(--borde);
+            border-radius: 10px;
+            padding: 10px 12px;
+            margin-bottom: 8px;
+        }
+        .titulo span { flex: 1; font-weight: 700; font-size: 17px; word-break: break-word; }
+
+        .copiar, .chico {
+            background: #14142b;
+            color: var(--texto);
+            border: 1px solid var(--borde);
+            border-radius: 8px;
+            padding: 6px 10px;
+            font-weight: 700;
+            font-size: 14px;
+            white-space: nowrap;
+        }
+        .copiar:hover, .chico:hover { border-color: var(--verde); }
+        .copiar.listo { border-color: var(--verde); color: var(--verde); }
+
+        .acciones-titulo { display: flex; gap: 6px; }
+
+        .caja-texto {
+            background: var(--tarjeta);
+            border: 1px solid var(--borde);
+            border-radius: 10px;
+            padding: 12px;
+            white-space: pre-wrap;
+            word-break: break-word;
+            margin-bottom: 8px;
+        }
+        #hashtags { color: var(--rosa); font-weight: 700; }
+
+        .oculto { display: none; }
+
+        .aviso {
+            position: fixed; left: 50%; bottom: 20px;
+            transform: translateX(-50%) translateY(100px);
+            background: var(--verde); color: #0d0d1a;
+            font-weight: 700; padding: 10px 18px; border-radius: 10px;
+            transition: transform 0.3s, opacity 0.3s; z-index: 20;
+            opacity: 0; pointer-events: none;
+        }
+        .aviso.visible { transform: translateX(-50%) translateY(0); opacity: 1; }
+
+        @media (max-width: 520px) {
+            .titulo { flex-direction: column; align-items: stretch; }
+            .acciones-titulo { justify-content: flex-end; }
+        }
+    </style>
+</head>
+<body>
+<div class="contenedor">
+    <nav class="menu">
+        <a href="../planificador/">📋 Planificador</a>
+        <a href="./" class="activo">🎨 Generador de títulos</a>
+    </nav>
+
+    <header>
+        <img src="../omarex-logo.png" alt="OMAREX" width="90" height="90">
+        <h1>🎨 Generador de Títulos</h1>
+        <p class="subtitulo">Títulos, hashtags y descripción para tus videos</p>
+    </header>
+
+    <div class="panel">
+        <label>1️⃣ ¿De qué es tu video?</label>
+        <div class="chips" id="tipos"></div>
+
+        <label for="nombre">2️⃣ ¿Qué juego o anime?</label>
+        <input type="text" id="nombre" maxlength="40" placeholder="Ej: Fortnite, Naruto, Rocket League...">
+
+        <label>3️⃣ ¿Qué pasa en el video?</label>
+        <div class="chips" id="momentos"></div>
+
+        <button class="boton" id="btn-generar">✨ Generar títulos</button>
+    </div>
+
+    <div id="resultados" class="oculto">
+        <div class="panel">
+            <h2>🔥 Títulos <button class="chico" id="btn-otros">🎲 Otros títulos</button></h2>
+            <div id="titulos"></div>
+        </div>
+
+        <div class="panel">
+            <h2># Hashtags <button class="copiar" id="copiar-hashtags">📋 Copiar</button></h2>
+            <div class="caja-texto" id="hashtags"></div>
+        </div>
+
+        <div class="panel">
+            <h2>📝 Descripción <button class="copiar" id="copiar-descripcion">📋 Copiar</button></h2>
+            <div class="caja-texto" id="descripcion"></div>
+        </div>
+    </div>
+</div>
+
+<div class="aviso" id="aviso"></div>
+
+<script src="generador.js"></script>
+</body>
+</html>

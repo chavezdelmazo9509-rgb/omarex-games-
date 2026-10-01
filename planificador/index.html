@@ -40,6 +40,17 @@
 
         .contenedor { max-width: 1200px; margin: 0 auto; }
 
+        .menu { display: flex; justify-content: center; gap: 10px; margin-bottom: 14px; flex-wrap: wrap; }
+        .menu a {
+            color: var(--texto);
+            text-decoration: none;
+            font-weight: 700;
+            border: 1px solid var(--borde);
+            border-radius: 99px;
+            padding: 6px 14px;
+        }
+        .menu a.activo { border-color: var(--verde); color: var(--verde); }
+
         header { text-align: center; margin-bottom: 20px; }
         header img { width: 90px; }
         h1 {
@@ -191,9 +202,10 @@
             transform: translateX(-50%) translateY(100px);
             background: var(--verde); color: #0d0d1a;
             font-weight: 700; padding: 10px 18px; border-radius: 10px;
-            transition: transform 0.3s; z-index: 20;
+            transition: transform 0.3s, opacity 0.3s; z-index: 20;
+            opacity: 0; pointer-events: none;
         }
-        .aviso.visible { transform: translateX(-50%) translateY(0); }
+        .aviso.visible { transform: translateX(-50%) translateY(0); opacity: 1; }
 
         .nota-guardado { text-align: center; color: var(--suave); font-size: 14px; margin-top: 22px; }
 
@@ -210,6 +222,11 @@
 </head>
 <body>
 <div class="contenedor">
+    <nav class="menu">
+        <a href="./" class="activo">📋 Planificador</a>
+        <a href="../generador/">🎨 Generador de títulos</a>
+    </nav>
+
     <header>
         <img src="../omarex-logo.png" alt="OMAREX" width="90" height="90">
         <h1>📋 Planificador de TikToks</h1>

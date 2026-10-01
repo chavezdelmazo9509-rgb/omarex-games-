@@ -16,6 +16,7 @@
     let temporizador = null;
     let segundosTotales = 0;   // tiempo que tardó en toda la partida
     let puntajePendiente = null;
+    let ultimoRango = "";
 
     // Servidor donde se guarda el Top 10 (el mismo del Snake)
     const API_ANIME = "https://omarex-puntajes-server.onrender.com/anime";
@@ -154,6 +155,7 @@
         if (aciertos >= 9) rango = "👑 Rey OTAKU";
         if (aciertos === 10) rango = "🐉 ¡LEYENDA OMAREX!";
         $("rango").textContent = rango;
+        ultimoRango = rango;
 
         const record = leerRecord();
         if (puntos > record) {
@@ -248,6 +250,13 @@
     $("btn-otra").onclick = empezar;
     $("btn-pista").onclick = pedirPista;
     $("guardar-btn").onclick = guardarEnTop;
+    $("btn-compartir").onclick = () => compartirPuntaje({
+        juego: "Adivina el Anime",
+        grande: `${aciertos}/10`,
+        detalle: `en ${segundosTotales.toFixed(1)} segundos · ${ultimoRango}`,
+        fondo: "portada-anime.jpg",
+        boton: $("btn-compartir")
+    });
     $("nombre").addEventListener("keydown", e => { if (e.key === "Enter") guardarEnTop(); });
     $("record").textContent = leerRecord();
     cargarTop();

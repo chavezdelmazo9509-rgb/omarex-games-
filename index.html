@@ -253,6 +253,64 @@
                 </div>
             </div>
 
+            <div class="snake-juego" id="adivina-opening">
+                <h3>🎵 Adivina el Opening</h3>
+                <p class="reglas-juego">📋 Escucha un pedazo del opening y elige de qué anime es. 10 canciones, 15 segundos cada una. ¡Sube el volumen! 🔊</p>
+                <div class="anime-caja">
+                    <!-- Portada -->
+                    <div id="op-portada" class="anime-portada opening-portada">
+                        <div class="anime-flotantes" aria-hidden="true">
+                            <span>🎵</span><span>🎶</span><span>🎤</span><span>🎧</span><span>🎸</span><span>🎹</span><span>🥁</span><span>🎼</span><span>🔊</span><span>🎵</span>
+                        </div>
+                        <div class="anime-portada-contenido">
+                            <div class="anime-portada-emojis">🎧🎌🎶</div>
+                            <p class="anime-portada-titulo">ADIVINA EL OPENING</p>
+                            <span class="anime-portada-sub">¿Reconoces la canción? 🎤</span>
+                            <button id="op-btn-empezar" class="anime-boton">▶ Jugar</button>
+                            <span class="anime-portada-record">🏆 Tu récord: <strong id="op-record">—</strong></span>
+                        </div>
+                    </div>
+
+                    <!-- Cargando -->
+                    <div id="op-cargando" class="anime-oculto">
+                        <div class="opening-disco girando">💿</div>
+                        <p id="op-cargando-texto">🎧 Preparando canciones...</p>
+                        <button id="op-btn-reintentar" class="anime-boton anime-oculto">🔄 Intentar otra vez</button>
+                    </div>
+
+                    <!-- Juego -->
+                    <div id="op-juego" class="anime-oculto">
+                        <div class="anime-marcador">
+                            <span>Canción <span id="op-ronda">1</span>/<span id="op-total">10</span></span>
+                            <span>✅ <span id="op-aciertos">0</span></span>
+                        </div>
+                        <div class="anime-barra"><div id="op-tiempo-relleno"></div></div>
+                        <div id="op-disco" class="opening-disco">💿</div>
+                        <p id="op-estado-audio">🎧 Cargando canción...</p>
+                        <button id="op-btn-escuchar" class="anime-boton anime-oculto">🔊 Tocar para escuchar</button>
+                        <div id="op-opciones"></div>
+                        <div class="opening-controles">
+                            <button id="op-btn-repetir">🔁 Repetir</button>
+                            <label>🔊 <input type="range" id="op-volumen" min="0" max="1" step="0.05" value="0.8" aria-label="Volumen"></label>
+                        </div>
+                        <div id="op-mensaje"></div>
+                        <div id="op-revelado"></div>
+                    </div>
+
+                    <!-- Final -->
+                    <div id="op-final" class="anime-oculto">
+                        <p>Tu resultado</p>
+                        <div id="op-final-aciertos" class="opening-final-numero">0/10</div>
+                        <div id="op-rango" class="opening-rango"></div>
+                        <p id="op-final-detalle"></p>
+                        <p id="op-nuevo-record" class="opening-record"></p>
+                        <button id="op-btn-compartir" class="boton-compartir">📤 Compartir mi puntaje</button>
+                        <button id="op-btn-otra" class="anime-boton">🔄 Jugar otra vez</button>
+                    </div>
+                </div>
+                <p class="opening-credito">🎵 Música: vistas previas de Apple Music. Toca el enlace de cada canción para escucharla completa.</p>
+            </div>
+
             <div class="snake-juego" id="quiz-personaje">
                 <h3>⚔️ ¿Qué personaje de anime eres?</h3>
                 <p class="reglas-juego">📋 Responde 6 preguntas rápidas y descubre qué personaje de anime eres. ¡Comparte tu resultado y reta a tus amigos!</p>
@@ -1095,6 +1153,8 @@
 <script src="compartir.js"></script>
 <script src="adivina-anime/animes.js"></script>
 <script src="adivina-anime/juego.js"></script>
+<script src="adivina-opening/openings.js"></script>
+<script src="adivina-opening/juego.js"></script>
 <script src="quiz-personaje/personajes.js"></script>
 <script src="quiz-personaje/quiz.js"></script>
 <script data-goatcounter="https://omarexgames.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>

@@ -199,12 +199,24 @@
         });
     }
 
-    function cargarTop() {
-        pintarTop([], "⏳ Cargando el Top 10... (la primera vez puede tardar unos segundos)");
+    // El servidor gratis "duerme" y tarda hasta ~1 minuto en despertar,
+    // así que si falla se vuelve a intentar unas veces antes de rendirse.
+    function cargarTop(intento = 1) {
+        const MAX_INTENTOS = 4;
+        pintarTop([], intento === 1
+            ? "⏳ Cargando el Top 10... (la primera vez puede tardar unos segundos)"
+            : `⏳ Despertando el servidor... (intento ${intento} de ${MAX_INTENTOS})`);
         fetch(API_ANIME)
-            .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
+            .then(r => { if (!r.ok) throw new Error("Error " + r.status); return r.json(); })
             .then(lista => pintarTop(lista))
-            .catch(() => pintarTop([], "⚠️ No se pudo cargar el Top 10. Intenta más tarde."));
+            .catch(error => {
+                console.log("Top 10 anime:", error.message);
+                if (intento < MAX_INTENTOS) {
+                    setTimeout(() => cargarTop(intento + 1), 10000);
+                } else {
+                    pintarTop([], "⚠️ No se pudo cargar el Top 10. Recarga la página en un rato.");
+                }
+            });
     }
 
     function guardarEnTop() {

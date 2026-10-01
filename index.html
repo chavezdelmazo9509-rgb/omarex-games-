@@ -163,7 +163,7 @@
 
             <div class="snake-juego">
                 <h3>🐍 OMAREX Snake</h3>
-                <p class="reglas-juego">📋 Usa las flechas del teclado (o los botones abajo en celular) para moverte. Come los puntos verdes para crecer y sumar puntos. Los diamantes 💎 dorados dan +50 puntos y 5 segundos de modo turbo. Si llegas a un borde, apareces del otro lado — ¡no choques contigo mismo ni con los ladrillos 🧱!</p>
+                <p class="reglas-juego">📋 Usa las flechas o W A S D del teclado (o los botones abajo en celular) para moverte. Come los puntos verdes para crecer y sumar puntos. Los diamantes 💎 dorados dan +50 puntos y 5 segundos de modo turbo. Si llegas a un borde, apareces del otro lado — ¡no choques contigo mismo ni con los ladrillos 🧱!</p>
                 <div class="snake-info">
                     <span>Puntos: <span id="snake-puntos">0</span></span>
                     <span>Nivel: <span id="snake-nivel">1</span></span>
@@ -686,6 +686,8 @@
         jugando = true;
         document.getElementById("snake-portada").style.display = "none";
         btnIniciar.classList.remove("snake-oculto");
+        // Centrar el tablero en la pantalla para verlo completo
+        document.querySelector(".snake-canvas-wrap").scrollIntoView({ behavior: "smooth", block: "center" });
 
         elPuntos.textContent = puntos;
         elNivel.textContent = nivel;
@@ -994,11 +996,21 @@
         siguienteDireccion = {x: nuevaX, y: nuevaY};
     }
 
+    // Flechas o W A S D. Mientras juegas, la página no se mueve con las flechas.
+    const teclasSnake = {
+        ArrowUp: [0, -1], ArrowDown: [0, 1], ArrowLeft: [-1, 0], ArrowRight: [1, 0],
+        w: [0, -1], s: [0, 1], a: [-1, 0], d: [1, 0]
+    };
+
     document.addEventListener("keydown", function(evento) {
-        if (evento.key === "ArrowUp") cambiarDireccion(0, -1);
-        if (evento.key === "ArrowDown") cambiarDireccion(0, 1);
-        if (evento.key === "ArrowLeft") cambiarDireccion(-1, 0);
-        if (evento.key === "ArrowRight") cambiarDireccion(1, 0);
+        if (!jugando) return;
+        // No robar las letras si la persona está escribiendo su nombre
+        if (evento.target.tagName === "INPUT") return;
+        const tecla = evento.key.length === 1 ? evento.key.toLowerCase() : evento.key;
+        const dir = teclasSnake[tecla];
+        if (!dir) return;
+        evento.preventDefault(); // evita que la página suba o baje
+        cambiarDireccion(dir[0], dir[1]);
     });
 
     document.getElementById("btn-arriba").addEventListener("click", function() { cambiarDireccion(0, -1); });

@@ -972,3 +972,78 @@ footer a:hover {
 
 /* El botón de abajo del Snake aparece solo después de la primera partida */
 #snake-iniciar.snake-oculto { display: none; }
+
+/* ===== Botón Compartir mi puntaje ===== */
+.boton-compartir {
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 700;
+    font-size: 17px;
+    background: linear-gradient(135deg, #ff2ec4, #7b2ff7);
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    padding: 12px 24px;
+    margin: 10px 0;
+    cursor: pointer;
+    box-shadow: 0 0 14px rgba(255, 46, 196, 0.6);
+}
+.boton-compartir:hover { box-shadow: 0 0 22px #ff2ec4; transform: translateY(-1px); }
+.boton-compartir:disabled { opacity: 0.7; cursor: default; }
+
+/* ===== Test: ¿Qué personaje de anime eres? ===== */
+.quiz-portada {
+    background:
+        radial-gradient(circle at 25% 25%, rgba(123, 47, 247, 0.6), transparent 55%),
+        radial-gradient(circle at 75% 80%, rgba(255, 46, 196, 0.5), transparent 55%),
+        radial-gradient(circle at 50% 50%, #1d0b3a, #05050a 75%);
+}
+
+#quiz-progreso {
+    height: 100%;
+    width: 0;
+    background: linear-gradient(90deg, #39ff14, #ff2ec4);
+    transition: width 0.3s ease;
+}
+
+#quiz-pregunta {
+    font-family: 'Orbitron', sans-serif;
+    font-size: clamp(18px, 5vw, 24px);
+    color: #ffffff;
+    margin: 16px 0 20px;
+    min-height: 60px;
+}
+
+#quiz-opciones { display: grid; gap: 10px; }
+
+#quiz-opciones button {
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 700;
+    font-size: 17px;
+    color: #e0e0ff;
+    background: #1e1e3d;
+    border: 2px solid #3a3a6e;
+    border-radius: 10px;
+    padding: 14px 12px;
+    cursor: pointer;
+    text-align: left;
+    transition: transform 0.1s, border-color 0.2s, background 0.2s;
+}
+#quiz-opciones button:hover { border-color: #ff2ec4; background: #2a1a45; transform: translateX(4px); }
+
+#quiz-resultado { padding-top: 10px; }
+#quiz-res-emoji { font-size: 80px; animation: animeLatido 1.6s ease-in-out infinite; }
+#quiz-res-nombre { font-family: 'Orbitron', sans-serif; font-size: clamp(24px, 7vw, 34px); margin: 6px 0 2px; }
+#quiz-res-anime { color: #a0a0c0; font-weight: 700; margin-bottom: 12px; }
+#quiz-res-descripcion { font-size: 18px; max-width: 440px; margin: 0 auto 12px; }
+
+#quiz-res-rasgos { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-bottom: 12px; }
+#quiz-res-rasgos span {
+    background: #1e1e3d;
+    border: 1px solid #3a3a6e;
+    border-radius: 99px;
+    padding: 6px 12px;
+    font-weight: 700;
+}
+
+#quiz-res-frase { color: #ffd23f; font-style: italic; font-weight: 700; margin-bottom: 6px; }
+#quiz-resultado .anime-boton { display: block; margin: 8px auto 0; }

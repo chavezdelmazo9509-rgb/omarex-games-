@@ -151,6 +151,7 @@
                 </div>
                 <p id="memoria-mensaje">🧠 ¿Tienes buena memoria?</p>
                 <div id="tablero-memoria"><div class="portada-juego portada-memoria"><i class="fa-solid fa-brain"></i><p>Juego de Memoria</p><button class="portada-jugar" id="memoria-jugar-portada">▶ Jugar</button><span>Encuentra las 8 parejas en 15 movimientos</span></div></div>
+                <button id="memoria-btn-compartir" class="boton-compartir" style="display: none;">📤 Compartir mi puntaje</button>
                 <div id="memoria-guardar-nombre" style="display: none;">
                     <input type="text" id="memoria-nombre-input" maxlength="12" placeholder="Tu nombre">
                     <button id="memoria-guardar-btn">Guardar</button>
@@ -177,6 +178,7 @@
                 </div>
                 <div class="snake-canvas-wrap"><canvas id="snake-canvas" width="640" height="400"></canvas><div id="snake-portada" class="portada-juego portada-snake"><i class="fa-solid fa-worm"></i><p>OMAREX Snake</p><button class="portada-jugar" id="snake-jugar-portada">▶ Jugar</button><span>Come, crece y no choques 🐍</span></div></div>
                 <div id="snake-mensaje"></div>
+                <button id="snake-btn-compartir" class="boton-compartir" style="display: none;">📤 Compartir mi puntaje</button>
                 <div id="snake-guardar-nombre" style="display: none;">
                     <input type="text" id="snake-nombre-input" maxlength="12" placeholder="Tu nombre">
                     <button id="snake-guardar-btn">Guardar</button>
@@ -241,12 +243,55 @@
                             <input type="text" id="anime-nombre" maxlength="12" placeholder="Tu nombre">
                             <button id="anime-guardar-btn">Guardar</button>
                         </div>
+                        <button id="anime-btn-compartir" class="boton-compartir">📤 Compartir mi puntaje</button>
                         <button id="anime-btn-otra" class="anime-boton">🔄 Jugar otra vez</button>
                     </div>
                 </div>
                 <div class="snake-tabla">
                     <h4>🏆 Top 10 reales otakus (más aciertos y más rápidos)</h4>
                     <ol id="anime-top10"><li>⏳ Cargando el Top 10...</li></ol>
+                </div>
+            </div>
+
+            <div class="snake-juego" id="quiz-personaje">
+                <h3>⚔️ ¿Qué personaje de anime eres?</h3>
+                <p class="reglas-juego">📋 Responde 6 preguntas rápidas y descubre qué personaje de anime eres. ¡Comparte tu resultado y reta a tus amigos!</p>
+                <div class="anime-caja">
+                    <!-- Portada -->
+                    <div id="quiz-portada" class="anime-portada quiz-portada">
+                        <div class="anime-flotantes" aria-hidden="true">
+                            <span>🐉</span><span>🍥</span><span>👒</span><span>⚔️</span><span>🌊</span><span>🕶️</span><span>📓</span><span>🥜</span><span>✨</span><span>🔥</span>
+                        </div>
+                        <div class="anime-portada-contenido">
+                            <div class="anime-portada-emojis">🐉👒🕶️</div>
+                            <p class="anime-portada-titulo">¿QUIÉN ERES?</p>
+                            <span class="anime-portada-sub">Goku, Luffy, Gojo, Levi... ¿cuál eres tú? 👀</span>
+                            <button id="quiz-btn-empezar" class="anime-boton">▶ Descubrir</button>
+                        </div>
+                    </div>
+
+                    <!-- Preguntas -->
+                    <div id="quiz-pregunta-pantalla" class="anime-oculto">
+                        <div class="anime-marcador">
+                            <span>Pregunta <span id="quiz-numero">1</span>/<span id="quiz-total">6</span></span>
+                        </div>
+                        <div class="anime-barra"><div id="quiz-progreso"></div></div>
+                        <p id="quiz-pregunta"></p>
+                        <div id="quiz-opciones"></div>
+                    </div>
+
+                    <!-- Resultado -->
+                    <div id="quiz-resultado" class="anime-oculto">
+                        <p>Eres...</p>
+                        <div id="quiz-res-emoji"></div>
+                        <div id="quiz-res-nombre"></div>
+                        <div id="quiz-res-anime"></div>
+                        <p id="quiz-res-descripcion"></p>
+                        <div id="quiz-res-rasgos"></div>
+                        <p id="quiz-res-frase"></p>
+                        <button id="quiz-btn-compartir" class="boton-compartir">📤 Compartir mi resultado</button>
+                        <button id="quiz-btn-otra" class="anime-boton">🔄 Hacer el test otra vez</button>
+                    </div>
                 </div>
             </div>
         </section>
@@ -377,6 +422,16 @@
     let movimientosPendientes = null;
 
     const cajaNombreMemoria = document.getElementById("memoria-guardar-nombre");
+    const btnCompartirMemoria = document.getElementById("memoria-btn-compartir");
+    btnCompartirMemoria.addEventListener("click", function() {
+        compartirPuntaje({
+            juego: "Juego de Memoria",
+            grande: movimientos + " mov.",
+            detalle: "¡Encontré las 8 parejas en " + movimientos + " movimientos!",
+            fondo: "portada-memoria.jpg",
+            boton: btnCompartirMemoria
+        });
+    });
     const inputNombreMemoria = document.getElementById("memoria-nombre-input");
     const btnGuardarMemoria = document.getElementById("memoria-guardar-btn");
 
@@ -418,6 +473,7 @@
         const tablero = document.getElementById("tablero-memoria");
         const mensaje = document.getElementById("memoria-mensaje");
         cajaNombreMemoria.style.display = "none";
+        btnCompartirMemoria.style.display = "none";
         movimientosPendientes = null;
         tablero.innerHTML = "";
         cartasVolteadas = [];
@@ -493,6 +549,7 @@
                 setTimeout(function() {
                     document.getElementById("memoria-mensaje").textContent = "🎉 ¡Ganaste en " + movimientos + " movimientos!";
                     movimientosPendientes = movimientos;
+                    btnCompartirMemoria.style.display = "inline-block";
                     cajaNombreMemoria.style.display = "flex";
                     inputNombreMemoria.focus();
                 }, 300);
@@ -536,6 +593,16 @@
     const elRecord = document.getElementById("snake-record");
     const elMensaje = document.getElementById("snake-mensaje");
     const btnIniciar = document.getElementById("snake-iniciar");
+    const btnCompartirSnake = document.getElementById("snake-btn-compartir");
+    btnCompartirSnake.addEventListener("click", function() {
+        compartirPuntaje({
+            juego: "OMAREX Snake",
+            grande: puntos + " pts",
+            detalle: "Llegué al nivel " + nivel + " 🐍",
+            fondo: "portada-snake.jpg",
+            boton: btnCompartirSnake
+        });
+    });
 
     const API_PUNTAJES = "https://omarex-puntajes-server.onrender.com/puntajes";
     let tablaPuntajes = [];
@@ -693,6 +760,7 @@
         elNivel.textContent = nivel;
         elMensaje.textContent = "";
         cajaNombre.style.display = "none";
+        btnCompartirSnake.style.display = "none";
         puntajePendiente = null;
         btnIniciar.textContent = "⏸ Reiniciar";
 
@@ -793,6 +861,7 @@
         }
 
         if (puntos > 0) {
+            btnCompartirSnake.style.display = "inline-block";
             puntajePendiente = puntos;
             cajaNombre.style.display = "block";
             inputNombre.value = "";
@@ -1023,8 +1092,11 @@
 
 </script>
 
+<script src="compartir.js"></script>
 <script src="adivina-anime/animes.js"></script>
 <script src="adivina-anime/juego.js"></script>
+<script src="quiz-personaje/personajes.js"></script>
+<script src="quiz-personaje/quiz.js"></script>
 <script data-goatcounter="https://omarexgames.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 
 </body>

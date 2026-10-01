@@ -14,6 +14,11 @@
     let usoPista = false;
     let tiempoRestante = SEGUNDOS;
     let temporizador = null;
+    let segundosTotales = 0;   // tiempo que tardó en toda la partida
+    let puntajePendiente = null;
+
+    // Servidor donde se guarda el Top 10 (el mismo del Snake)
+    const API_ANIME = "https://omarex-puntajes-server.onrender.com/anime";
 
     const $ = (id) => document.getElementById("anime-" + id);
 
@@ -42,7 +47,7 @@
 
     function empezar() {
         preguntas = mezclar(ANIMES).slice(0, TOTAL_RONDAS);
-        ronda = 0; puntos = 0; racha = 0; aciertos = 0;
+        ronda = 0; puntos = 0; racha = 0; aciertos = 0; segundosTotales = 0;
         $("puntos").textContent = 0;
         $("racha").textContent = 0;
         mostrarPantalla("juego");
@@ -97,6 +102,7 @@
     function responder(boton, esCorrecta) {
         clearInterval(temporizador);
         const actual = preguntas[ronda];
+        segundosTotales += SEGUNDOS - Math.max(0, tiempoRestante);
 
         // Bloquear botones y marcar la correcta en verde
         $("opciones").querySelectorAll("button").forEach(b => {
@@ -140,7 +146,7 @@
     function terminar() {
         mostrarPantalla("final");
         $("final-puntos").textContent = puntos;
-        $("final-detalle").textContent = `Acertaste ${aciertos} de ${TOTAL_RONDAS}`;
+        $("final-detalle").textContent = `Acertaste ${aciertos} de ${TOTAL_RONDAS} en ${segundosTotales.toFixed(1)} segundos`;
 
         let rango = "🥚 Novato del anime";
         if (aciertos >= 4) rango = "🍥 Genin otaku";
@@ -157,10 +163,80 @@
             $("nuevo-record").textContent = `Récord: ${record}`;
         }
         $("record").textContent = leerRecord();
+
+        // Si acertó al menos 1, puede entrar al Top 10
+        if (aciertos > 0) {
+            puntajePendiente = { aciertos: aciertos, segundos: Math.round(segundosTotales * 10) / 10 };
+            $("guardar").classList.remove("anime-oculto");
+            $("nombre").value = leerNombre();
+            $("guardar-btn").disabled = false;
+        } else {
+            $("guardar").classList.add("anime-oculto");
+        }
+    }
+
+    // ====== TOP 10 DE LOS REALES OTAKUS ======
+    function leerNombre() {
+        try { return localStorage.getItem("animeNombre") || ""; } catch (e) { return ""; }
+    }
+
+    function pintarTop(lista, aviso) {
+        const ol = $("top10");
+        ol.innerHTML = "";
+        if (aviso) {
+            ol.innerHTML = "<li>" + aviso + "</li>";
+            return;
+        }
+        if (lista.length === 0) {
+            ol.innerHTML = "<li>Todavía nadie... ¡sé el primer otaku! 🎌</li>";
+            return;
+        }
+        lista.forEach(function (j, i) {
+            const li = document.createElement("li");
+            const medalla = ["🥇", "🥈", "🥉"][i] || "";
+            li.textContent = `${medalla} ${j.nombre} — ${j.aciertos}/10 · ${j.segundos} s`;
+            ol.appendChild(li);
+        });
+    }
+
+    function cargarTop() {
+        pintarTop([], "⏳ Cargando el Top 10... (la primera vez puede tardar unos segundos)");
+        fetch(API_ANIME)
+            .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
+            .then(lista => pintarTop(lista))
+            .catch(() => pintarTop([], "⚠️ No se pudo cargar el Top 10. Intenta más tarde."));
+    }
+
+    function guardarEnTop() {
+        if (!puntajePendiente) return;
+        const nombre = $("nombre").value.trim() || "Otaku";
+        try { localStorage.setItem("animeNombre", nombre); } catch (e) {}
+        $("guardar-btn").disabled = true;
+        $("guardar-btn").textContent = "⏳ Guardando...";
+
+        fetch(API_ANIME, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ nombre: nombre, aciertos: puntajePendiente.aciertos, segundos: puntajePendiente.segundos })
+        })
+            .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
+            .then(lista => {
+                puntajePendiente = null;
+                $("guardar").classList.add("anime-oculto");
+                pintarTop(lista);
+            })
+            .catch(() => {
+                $("guardar-btn").disabled = false;
+                pintarTop([], "⚠️ No se pudo guardar. Toca Guardar otra vez.");
+            })
+            .finally(() => { $("guardar-btn").textContent = "Guardar"; });
     }
 
     $("btn-empezar").onclick = empezar;
     $("btn-otra").onclick = empezar;
     $("btn-pista").onclick = pedirPista;
+    $("guardar-btn").onclick = guardarEnTop;
+    $("nombre").addEventListener("keydown", e => { if (e.key === "Enter") guardarEnTop(); });
     $("record").textContent = leerRecord();
+    cargarTop();
 })();

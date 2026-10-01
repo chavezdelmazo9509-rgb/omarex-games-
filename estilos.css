@@ -480,21 +480,6 @@ footer {
     text-align: center;
 }
 
-#iniciar-memoria {
-    background-color: #39ff14;
-    color: #0d0d1a;
-    border: none;
-    padding: 8px 14px;
-    border-radius: 6px;
-    font-weight: bold;
-    cursor: pointer;
-    margin-right: 8px;
-}
-
-#iniciar-memoria:hover {
-    background-color: #ff2ec4;
-}
-
 /* Tabla de mejores puntajes del Snake */
 .snake-tabla {
     background: rgba(20, 20, 43, 0.6);
@@ -937,3 +922,53 @@ footer a:hover {
 @media (max-width: 420px) {
     #anime-opciones { grid-template-columns: 1fr; }
 }
+
+/* Top 10 de Adivina el Anime */
+#adivina-anime .snake-tabla { max-width: 380px; margin-top: 14px; }
+
+#anime-guardar { margin-top: 12px; }
+#anime-guardar p { color: #ffd23f; font-weight: 700; margin-bottom: 8px; }
+
+#anime-nombre {
+    background: #0a0a14;
+    border: 1px solid #39ff14;
+    border-radius: 6px;
+    padding: 8px 12px;
+    color: #e0e0ff;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 15px;
+    max-width: 160px;
+}
+#anime-nombre:focus { outline: none; border-color: #ff2ec4; }
+
+#anime-guardar-btn {
+    background-color: #ff2ec4;
+    color: #0d0d1a;
+    border: none;
+    padding: 9px 16px;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+}
+#anime-guardar-btn:hover { background-color: #39ff14; }
+#anime-guardar-btn:disabled { opacity: 0.6; cursor: default; }
+
+/* Botón ▶ Jugar en medio de las portadas de Memoria y Snake */
+.portada-jugar {
+    z-index: 1;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 18px;
+    background: #39ff14;
+    color: #0d0d1a;
+    border: none;
+    border-radius: 10px;
+    padding: 12px 34px;
+    margin: 12px 0 8px;
+    cursor: pointer;
+    box-shadow: 0 0 18px #39ff14;
+    animation: animeLatido 1.6s ease-in-out infinite;
+}
+.portada-jugar:hover { background: #ff2ec4; box-shadow: 0 0 18px #ff2ec4; }
+
+/* El botón de abajo del Snake aparece solo después de la primera partida */
+#snake-iniciar.snake-oculto { display: none; }

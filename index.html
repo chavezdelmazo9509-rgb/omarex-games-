@@ -147,11 +147,10 @@
             <div id="juego-embebido">
                 <div class="memoria-info">
                     <span>Movimientos: <span id="contador-movimientos">0</span></span>
-                    <button id="iniciar-memoria">▶ Iniciar</button>
                     <button id="reiniciar-juego">🔄 Reiniciar</button>
                 </div>
-                <p id="memoria-mensaje">Presiona ▶ Iniciar para comenzar</p>
-                <div id="tablero-memoria"><div class="portada-juego portada-memoria"><i class="fa-solid fa-brain"></i><p>Juego de Memoria</p><span>Presiona ▶ Iniciar para comenzar</span></div></div>
+                <p id="memoria-mensaje">🧠 ¿Tienes buena memoria?</p>
+                <div id="tablero-memoria"><div class="portada-juego portada-memoria"><i class="fa-solid fa-brain"></i><p>Juego de Memoria</p><button class="portada-jugar" id="memoria-jugar-portada">▶ Jugar</button><span>Encuentra las 8 parejas en 15 movimientos</span></div></div>
                 <div id="memoria-guardar-nombre" style="display: none;">
                     <input type="text" id="memoria-nombre-input" maxlength="12" placeholder="Tu nombre">
                     <button id="memoria-guardar-btn">Guardar</button>
@@ -176,7 +175,7 @@
                     <button class="skin-btn" data-skin="cyber">🔮 Cyber</button>
                     <button class="skin-btn" data-skin="dorado">👑 Dorado</button>
                 </div>
-                <div class="snake-canvas-wrap"><canvas id="snake-canvas" width="640" height="400"></canvas><div id="snake-portada" class="portada-juego portada-snake"><i class="fa-solid fa-worm"></i><p>OMAREX Snake</p><span>Presiona ▶ Jugar para comenzar</span></div></div>
+                <div class="snake-canvas-wrap"><canvas id="snake-canvas" width="640" height="400"></canvas><div id="snake-portada" class="portada-juego portada-snake"><i class="fa-solid fa-worm"></i><p>OMAREX Snake</p><button class="portada-jugar" id="snake-jugar-portada">▶ Jugar</button><span>Come, crece y no choques 🐍</span></div></div>
                 <div id="snake-mensaje"></div>
                 <div id="snake-guardar-nombre" style="display: none;">
                     <input type="text" id="snake-nombre-input" maxlength="12" placeholder="Tu nombre">
@@ -186,7 +185,7 @@
                     <h4>🏆 Mejores 10 puntajes</h4>
                     <ol id="snake-top5"><li>⏳ Cargando marcador...</li></ol>
                 </div>
-                <button id="snake-iniciar">▶ Jugar</button>
+                <button id="snake-iniciar" class="snake-oculto">▶ Jugar</button>
                 <div class="snake-controles">
                     <button class="snake-btn" id="btn-arriba">⬆</button>
                     <div>
@@ -237,8 +236,17 @@
                         <div id="anime-rango"></div>
                         <p id="anime-final-detalle"></p>
                         <p id="anime-nuevo-record"></p>
+                        <div id="anime-guardar" class="anime-oculto">
+                            <p>🏆 ¡Entra al Top 10 de los reales otakus!</p>
+                            <input type="text" id="anime-nombre" maxlength="12" placeholder="Tu nombre">
+                            <button id="anime-guardar-btn">Guardar</button>
+                        </div>
                         <button id="anime-btn-otra" class="anime-boton">🔄 Jugar otra vez</button>
                     </div>
+                </div>
+                <div class="snake-tabla">
+                    <h4>🏆 Top 10 reales otakus (más aciertos y más rápidos)</h4>
+                    <ol id="anime-top10"><li>⏳ Cargando el Top 10...</li></ol>
                 </div>
             </div>
         </section>
@@ -509,7 +517,7 @@
     }
 
     document.getElementById("reiniciar-juego").addEventListener("click", iniciarJuego);
-    document.getElementById("iniciar-memoria").addEventListener("click", iniciarJuego);
+    document.getElementById("memoria-jugar-portada").addEventListener("click", iniciarJuego);
 
 
     // ===== JUEGO DE SNAKE =====
@@ -677,6 +685,7 @@
         clearTimeout(turboTimeout);
         jugando = true;
         document.getElementById("snake-portada").style.display = "none";
+        btnIniciar.classList.remove("snake-oculto");
 
         elPuntos.textContent = puntos;
         elNivel.textContent = nivel;
@@ -998,6 +1007,7 @@
     document.getElementById("btn-derecha").addEventListener("click", function() { cambiarDireccion(1, 0); });
 
     btnIniciar.addEventListener("click", iniciarSnake);
+    document.getElementById("snake-jugar-portada").addEventListener("click", iniciarSnake);
 
 </script>
 

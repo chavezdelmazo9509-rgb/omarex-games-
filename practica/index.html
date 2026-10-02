@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Mi mini generador</title>
+<style>
+body{
+	background: #0d0d1a;
+	color: white;
+	font-family: sans-serif;
+	text-align: center;
+	padding: 40px;
+}
+h1{
+	color: #CCCC1B;
+}
+ input {
+	padding:12px;
+	font-size: 18px;
+	border-radius: 8px;
+	border: 2px solid #ff2ec4;
+}
+button{
+	background: #39ff14;
+	border: none;
+	padding: 12px 24px;
+	font-size: 18px;
+	border-radius: 10px;
+	cursor: pointer;
+}
+button:hover{
+	background:#12184D;
+	color:white;
+}
+#resultado{
+	font-size: 24px;
+	color:#EB260C;
+}
+</style>
+</head>
+<body>
+<h1>🎮 Mi Mini Generador</h1>
+<input type="text" id="nombre" placeholder="Escribe un juego">
+<button id="btn-generar">✨ Generar</button>
+<p id="resultado"></p>
+<script>
+	const titulos = [
+	"Nadie esperaba esta jugada en {X} 😱",
+	"Mi peor momento en {X} 😂",
+	"El truco de {X} que nadie te dice 🤫",
+	"Mi primera victoria {X} 🏆",
+	"Asi juego {X} como un pro 😎",
+	"pross de pross  en {X} 😎"
+];
+ console.log(titulos);
+
+ function generar () {
+	const nombre = document.getElementById("nombre").value.trim();
+	if (nombre === "") {
+	document.getElementById("resultado").textContent = "✏️ Escribe el juego";
+	return;
+}
+ 	const numero = Math.floor(Math.random() * titulos.length);
+	const titulo = titulos[numero].replaceAll("{X}", nombre);
+	document.getElementById("resultado").textContent = titulo;
+}
+ document.getElementById("btn-generar").onclick = generar;
+document.getElementById("nombre").addEventListener("keydown", function (evento)
+{
+ if (evento.key === "Enter") {
+	generar();
+}
+});
+</script>
+</body>
+</html>

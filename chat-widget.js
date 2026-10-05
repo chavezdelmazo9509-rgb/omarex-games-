@@ -250,7 +250,7 @@
                 escribiendo.textContent = "Despertando al asistente 😴 puede tardar hasta 1 minuto la primera vez...";
             }, 7000);
             const control = new AbortController();
-            const limite = setTimeout(function () { control.abort(); }, 75000);
+            const limite = setTimeout(function () { control.abort(); }, 110000);
 
             function terminar() {
                 clearTimeout(aviso1);

@@ -1,5 +1,5 @@
 // ==========================================================
-//  💬 Lo que dice el chat de OMAREX GAMES
+//  💬 Lo que dice el chat de OMAREX GAMES (respuestas preparadas + IA)
 //
 //  Para agregar una respuesta, copia un bloque { ... }, cambia:
 //    id          un nombre corto sin espacios
@@ -13,7 +13,10 @@ OmarexChat.iniciar({
     titulo: "🎮 Ayuda de OMAREX Games",
     lado: "derecha",
     etiquetaBoton: "Abrir chat de ayuda",
-    aviso: "🤖 Soy un asistente automático con respuestas preparadas, no una persona. No escribas datos personales.",
+    aviso: "🤖 Asistente automático con IA, no una persona. Puede equivocarse. No escribas datos personales: lo que no esté en mis respuestas preparadas se envía a Google para generar la respuesta.",
+
+    // Respuestas con IA cuando la pregunta no está en la lista de abajo
+    ia: { url: "https://omarex-puntajes-server.onrender.com/chat", sitio: "juegos" },
 
     tema: { fondo: "#0d0d1a", texto: "#e0e0ff", burbuja: "#1e1e3d", acento: "#39ff14", sobreAcento: "#0d0d1a", linea: "#3a3a6e", enlace: "#ff2ec4" },
 
@@ -115,7 +118,7 @@ OmarexChat.iniciar({
         {
             id: "privacidad",
             claves: ["privacidad", "datos", "seguro", "seguridad", "guardan", "cookies", "informacion personal"],
-            respuesta: "Sobre tus datos 🔒: no pedimos cuenta ni correo. En los Top 10 se guarda solo el nombre que escribes y tu puntaje. Contamos las visitas de forma anónima. Este chat funciona en tu navegador y no guarda lo que escribes. Aun así, no escribas datos personales.",
+            respuesta: "Sobre tus datos 🔒: no pedimos cuenta ni correo. En los Top 10 se guarda solo el nombre que escribes y tu puntaje. Contamos las visitas de forma anónima. Las preguntas que el chat no tiene preparadas se envían a Google para que una IA las responda; Omar no las guarda. No escribas datos personales.",
             sugerencias: ["gratis", "creador"]
         },
         {
@@ -140,7 +143,7 @@ OmarexChat.iniciar({
         {
             id: "ia",
             claves: ["eres una persona", "eres humano", "eres un robot", "eres una ia", "eres ia", "inteligencia artificial", "chatgpt", "bot", "robot", "quien eres", "que eres"],
-            respuesta: "Soy un asistente automático 🤖: respondo con textos preparados, no soy una persona ni una inteligencia artificial avanzada. Si tu duda no está en mis respuestas, escríbele a Omar por sus redes.",
+            respuesta: "Soy un asistente automático 🤖, no una persona. Respondo con textos preparados y, si tu duda no está en ellos, uso una IA (un modelo de Google) que puede equivocarse. Para algo seguro, escríbele a Omar por sus redes.",
             sugerencias: ["contacto", "recomendar"]
         },
         {

@@ -1,5 +1,5 @@
 // ==========================================================
-//  💬 Chat de OMAREX (asistente automático con respuestas preparadas)
+//  💬 Chat de OMAREX (respuestas preparadas + IA opcional)
 //
 //  Este archivo es el "motor" y no se toca. Lo que dice el chat
 //  está en el otro archivo (chat-portafolio.js o chat-juegos.js),
@@ -106,7 +106,8 @@
             ".omx-chat .omx-bot{align-self:flex-start;background:var(--omx-burbuja);border-bottom-left-radius:4px;}" +
             ".omx-chat .omx-usuario{align-self:flex-end;background:var(--omx-acento);color:var(--omx-sobre-acento);border-bottom-right-radius:4px;}" +
             ".omx-chat .omx-msg a{color:var(--omx-enlace);text-decoration:underline;font-weight:700;}" +
-            ".omx-chat .omx-escribiendo{opacity:.7;letter-spacing:2px;}" +
+            ".omx-chat .omx-escribiendo{opacity:.7;}" +
+            ".omx-chat .omx-etiqueta{display:block;font-size:11px;opacity:.7;margin-top:4px;}" +
             ".omx-chat .omx-chips{display:flex;flex-wrap:wrap;gap:6px;padding:0 12px 8px;}" +
             ".omx-chat .omx-chip{background:transparent;color:var(--omx-texto);border:1px solid var(--omx-acento);border-radius:99px;" +
             "padding:5px 11px;font-size:14px;font-family:inherit;cursor:pointer;}" +
@@ -171,6 +172,31 @@
 
         let saludoMostrado = false;
         let pendiente = null;
+        let ocupado = false;
+        const historial = []; // [{rol:"user"|"ia", texto}] para dar contexto a la IA
+        const ia = config.ia || null;
+        if (ia && ia.aviso) aviso.textContent = ia.aviso;
+
+        function recordar(rol, texto) {
+            historial.push({ rol: rol, texto: String(texto).slice(0, 300) });
+            if (historial.length > 8) historial.shift();
+        }
+
+        // Deja turnos alternados (usuario, ia, usuario...) que terminen en usuario
+        function mensajesParaIA() {
+            const lista = [];
+            historial.forEach(function (m) {
+                if (lista.length && lista[lista.length - 1].rol === m.rol) lista[lista.length - 1] = m;
+                else lista.push(m);
+            });
+            while (lista.length && lista[0].rol !== "user") lista.shift();
+            return lista.slice(-5);
+        }
+
+        // La respuesta de la IA se muestra SOLO como texto (sin enlaces), quitando el formato markdown
+        function limpiarRespuestaIA(t) {
+            return String(t || "").replace(/\*\*|__|`/g, "").replace(/^\s*[*-]\s+/gm, "• ").replace(/^#+\s*/gm, "").trim();
+        }
 
         function bajar() { mensajes.scrollTop = mensajes.scrollHeight; }
 
@@ -211,11 +237,70 @@
             }, 350);
         }
 
+        function mostrarFalloIA(mensaje) {
+            agregarMensaje(mensaje || config.noEntendi, "bot");
+            mostrarChips(config.inicio);
+        }
+
+        function preguntarALaIA() {
+            ocupado = true;
+            const escribiendo = agregarMensaje("...", "bot");
+            escribiendo.classList.add("omx-escribiendo");
+            const aviso1 = setTimeout(function () {
+                escribiendo.textContent = "Despertando al asistente 😴 puede tardar hasta 1 minuto la primera vez...";
+            }, 7000);
+            const control = new AbortController();
+            const limite = setTimeout(function () { control.abort(); }, 75000);
+
+            function terminar() {
+                clearTimeout(aviso1);
+                clearTimeout(limite);
+                escribiendo.remove();
+                ocupado = false;
+            }
+
+            fetch(ia.url, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ sitio: ia.sitio, mensajes: mensajesParaIA() }),
+                signal: control.signal
+            }).then(function (r) {
+                return r.json().catch(function () { return {}; }).then(function (datos) { return { ok: r.ok, estado: r.status, datos: datos }; });
+            }).then(function (r) {
+                terminar();
+                if (r.ok && r.datos.respuesta) {
+                    const texto = limpiarRespuestaIA(r.datos.respuesta);
+                    const m = crear("div", "omx-msg omx-bot");
+                    m.textContent = texto;
+                    m.appendChild(crear("span", "omx-etiqueta", "🤖 Respuesta generada por IA, puede tener errores"));
+                    mensajes.appendChild(m);
+                    bajar();
+                    recordar("ia", texto);
+                    mostrarChips(config.inicio);
+                } else if (r.estado === 429 && r.datos.error) {
+                    mostrarFalloIA(r.datos.error + " Mientras tanto, usa los botones.");
+                } else {
+                    mostrarFalloIA(config.noEntendi);
+                }
+            }).catch(function () {
+                terminar();
+                mostrarFalloIA(config.noEntendi);
+            });
+        }
+
         function preguntar(texto, intencionDirecta) {
             const limpio = texto.trim();
-            if (!limpio) return;
+            if (!limpio || ocupado) return;
             agregarMensaje(limpio, "usuario");
-            responder(intencionDirecta || buscarIntencion(config.intenciones, limpio));
+            recordar("user", limpio);
+            const intencion = intencionDirecta || buscarIntencion(config.intenciones, limpio);
+            // Primero las respuestas preparadas; la IA solo contesta lo que no está en la lista
+            if (!intencion && ia && ia.url) {
+                preguntarALaIA();
+                return;
+            }
+            if (intencion) recordar("ia", intencion.respuesta);
+            responder(intencion);
         }
 
         function abrir() {

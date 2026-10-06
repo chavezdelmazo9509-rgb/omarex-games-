@@ -304,7 +304,19 @@
             responder(intencion);
         }
 
+        let despertado = false;
+
+        // Al abrir el chat se "toca" el servidor para que despierte mientras el visitante escribe
+        function despertarServidor() {
+            if (despertado || !ia || !ia.url) return;
+            despertado = true;
+            try {
+                fetch(ia.url.replace(/\/chat$/, "/salud")).catch(function () {});
+            } catch (e) { /* sin problema: solo es un aviso */ }
+        }
+
         function abrir() {
+            despertarServidor();
             panel.classList.add("omx-abierto");
             boton.setAttribute("aria-expanded", "true");
             boton.classList.remove("omx-pulso");

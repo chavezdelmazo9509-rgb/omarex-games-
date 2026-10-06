@@ -219,6 +219,7 @@
                 b.addEventListener("click", function () { preguntar(intencion.chip, intencion); });
                 chips.appendChild(b);
             });
+            bajar(); // los botones pueden cambiar la altura: se vuelve al último mensaje
         }
 
         function responder(intencion) {
